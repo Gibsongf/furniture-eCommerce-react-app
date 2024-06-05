@@ -4,18 +4,15 @@ import {
     IconButton,
     TextField,
     InputAdornment,
+    Grid,
+    Box,
 } from "@mui/material";
 import { Person2, ShoppingCart, Search } from "@mui/icons-material";
 import "../App.css";
 
 const Menu = () => {
     return (
-        <Stack
-            // sx={{ border: "black 1px solid" }}
-            justifyContent={"center"}
-            direction="row"
-            spacing={6}
-        >
+        <Stack justifyContent={"center"} direction="row" spacing={6}>
             <Button variant="text">Home</Button>
             <Button variant="text">Shop</Button>
             <Button variant="text">About</Button>
@@ -44,14 +41,12 @@ const IconMenu = () => {
     return (
         <Stack
             direction="row"
-            justifyContent={"right"}
             alignItems={"center"}
-            spacing={7}
-        >
+            justifyContent="space-evenly">
+            <SearchInput />
             <IconButton aria-label="user">
                 <Person2 fontSize="large" sx={{ fill: "black" }} />
             </IconButton>
-            <SearchInput />
             <IconButton aria-label="shopping-cart">
                 <ShoppingCart fontSize="large" sx={{ fill: "black" }} />
             </IconButton>
@@ -60,15 +55,16 @@ const IconMenu = () => {
 };
 export const Nav = () => {
     return (
-        <Stack
-            sx={{ border: "black 1px solid" }}
-            justifyContent={"space-evenly"}
-            direction="row"
-            spacing={5}
-        >
-            <Button variant="text">LOGO</Button>
-            <Menu />
-            <IconMenu />
-        </Stack>
+        <Grid container spacing={3} alignItems={"center"}>
+            <Grid item xs>
+                <Button variant="text">LOGO</Button>
+            </Grid>
+            <Grid item xs={6}>
+                <Menu />
+            </Grid>
+            <Grid item xs>
+                <IconMenu />
+            </Grid>
+        </Grid>
     );
 };
