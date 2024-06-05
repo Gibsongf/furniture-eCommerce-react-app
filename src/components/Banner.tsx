@@ -9,6 +9,7 @@ const NewArrival = () => {
                 padding: "30px",
                 paddingTop: "40px",
                 marginRight: "75px",
+                borderRadius: "10px",
             }}
             height={400}
             width={600}
