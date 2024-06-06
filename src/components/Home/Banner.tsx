@@ -1,5 +1,5 @@
 import { Button, Box, Typography } from "@mui/material";
-import "../App.css";
+import "../../../src/App.css";
 const NewArrival = () => {
     return (
         <Box
