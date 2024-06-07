@@ -5,11 +5,10 @@ import {
     TextField,
     InputAdornment,
     Grid,
-    Box,
 } from "@mui/material";
 import { Person2, ShoppingCart, Search } from "@mui/icons-material";
 import "../App.css";
-
+//when in mobile this nav is weird and use more than 100vw
 const Menu = () => {
     return (
         <Stack justifyContent={"center"} direction="row" spacing={6}>
@@ -48,6 +47,7 @@ const IconMenu = () => {
                 <Person2 fontSize="large" sx={{ fill: "black" }} />
             </IconButton>
             <IconButton aria-label="shopping-cart">
+                {/* change to badge at mui */}
                 <ShoppingCart fontSize="large" sx={{ fill: "black" }} />
             </IconButton>
         </Stack>

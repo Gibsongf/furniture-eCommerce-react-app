@@ -1,13 +1,11 @@
 import "./App.css";
-import { Banner } from "./components/Home/Banner";
-import { Categories } from "./components/Home/HomeCategory";
+import Home from "./Pages/Home";
 import { Nav } from "./components/NavBar";
 function App() {
     return (
         <>
             <Nav />
-            <Banner />
-            <Categories />
+            <Home />
         </>
     );
 }
