@@ -23,6 +23,14 @@ const fakeData: Product[] = [
         src: "src/assets/Home/product-1.png",
         description: "Stylish cafe chair",
         price: 100,
+        newProduct: true,
+    },
+    {
+        name: "Syltherine",
+        src: "src/assets/Home/product-1.png",
+        description: "Stylish cafe chair",
+        price: 100,
+        discount: "-50%",
     },
 ];
 export default function Home() {

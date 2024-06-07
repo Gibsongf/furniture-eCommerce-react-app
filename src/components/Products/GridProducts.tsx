@@ -5,17 +5,10 @@ export default function GridProducts({ products }: { products: Product[] }) {
     const moreProducts: JSX.Element[] = Array(8)
         .fill(0)
         .map((n, index) => {
-            const { name, price, src, description } = products[0];
-
+            // const { name, price, src, description } = products[0];
             return (
                 // <Box>
-                <ProductCard
-                    key={index}
-                    name={name}
-                    src={src}
-                    price={price}
-                    description={description}
-                />
+                <ProductCard key={index} product={products[index % 2]} />
                 // {/* </Box> */}
             );
         });

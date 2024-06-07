@@ -3,21 +3,24 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { AddToCart } from "./AddCartHover";
+import { CircleBadge } from "./CicleCardBadge";
 
 export interface Product {
     name: string;
     price: number;
     src: string;
     description: string;
-    new?: string;
+    newProduct?: boolean;
     discount?: string;
 }
 
 //a discount circle cor red with percentage of it
 //a new circle color
 
-export function ProductCard({ src, name, description, price }: Product) {
+export function ProductCard({ product }: { product: Product }) {
     const [showAddCart, setShowAddCart] = useState<string>("none");
+    const { name, price, src, description, newProduct, discount } = product;
+
     return (
         <Card
             sx={{
@@ -30,6 +33,8 @@ export function ProductCard({ src, name, description, price }: Product) {
             onMouseEnter={() => setShowAddCart("flex")}
             onMouseLeave={() => setShowAddCart("none")}>
             <AddToCart display={showAddCart} />
+            <CircleBadge isNew={newProduct} value={discount} />
+
             <img style={{ width: "100%" }} src={src} alt="title" srcSet="" />
             <CardContent sx={{ textAlign: "left" }}>
                 <Typography fontWeight="bold" variant="h4" component="h1">
