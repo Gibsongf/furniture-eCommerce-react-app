@@ -3,6 +3,7 @@ import { Banner } from "../components/Home/Banner";
 import { Categories } from "../components/Home/HomeCategory";
 import GridProducts, { Product } from "../components/Products/GridProducts";
 import ShareSetupImages from "../components/Home/ShareSetup";
+import { Footer } from "../components/Footer";
 
 const BrowseRange = () => {
     return (
@@ -64,6 +65,7 @@ export default function Home() {
                 <ShareSetup />
                 <ShareSetupImages />
             </Stack>
+            <Footer />
         </>
     );
 }
