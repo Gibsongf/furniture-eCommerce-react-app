@@ -8,10 +8,11 @@ export const Footer = () => {
                 gridTemplateColumns: "repeat(4, 1fr);",
                 minHeight: "300px",
                 // rowGap: "35px",
-                padding: "2rem",
+                padding: "1rem",
                 // width: "90%",
                 justifyItems: "center",
                 textAlign: "left",
+                gap: "5px",
             }}>
             <Box
                 className="col1"
