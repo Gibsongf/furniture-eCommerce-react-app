@@ -1,24 +1,25 @@
 import { Box, Typography } from "@mui/material";
 
 export const Footer = () => {
+    const link: string[] = ["Home", "Shop", "About"];
+    const help: string[] = ["Payment Options", "Returns", "Privacy Policies"];
+    const style: object = {
+        display: "flex",
+        flexDirection: "column",
+        gap: "40px",
+    };
     return (
         <Box
             sx={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr);",
                 minHeight: "300px",
-                // rowGap: "35px",
-                padding: "1rem",
-                // width: "90%",
+                padding: "40px 75px 40px 75px",
                 justifyItems: "center",
                 textAlign: "left",
                 gap: "5px",
             }}>
-            <Box
-                className="col1"
-                display="flex"
-                flexDirection="column"
-                gap="40px">
+            <Box sx={style}>
                 <Typography fontWeight={"bold"} variant="h5" component="h1">
                     Curabitur ullamcorpe
                 </Typography>
@@ -27,11 +28,7 @@ export const Footer = () => {
                     tincidunt.
                 </Typography>
             </Box>
-            <Box
-                display="flex"
-                flexDirection="column"
-                gap="40px"
-                className="col2">
+            <Box sx={style}>
                 <Typography
                     textAlign="left"
                     color="#616161"
@@ -39,33 +36,29 @@ export const Footer = () => {
                     component="h1">
                     Links
                 </Typography>
-                <Typography fontWeight={"bold"} variant="h6" component="h1">
-                    Home
-                </Typography>
-                <Typography fontWeight={"bold"} variant="h6" component="h1">
-                    Shop
-                </Typography>
-                <Typography fontWeight={"bold"} variant="h6" component="h1">
-                    About
-                </Typography>
+                {link.map((name) => (
+                    <Typography
+                        key={name}
+                        fontWeight={"bold"}
+                        variant="h6"
+                        component="h1">
+                        {name}
+                    </Typography>
+                ))}
             </Box>
-            <Box
-                display="flex"
-                flexDirection="column"
-                gap="40px"
-                className="col3">
+            <Box sx={style}>
                 <Typography color="#616161" variant="h6" component="h1">
                     Help
                 </Typography>
-                <Typography fontWeight={"bold"} variant="h6" component="h1">
-                    Payment Options
-                </Typography>
-                <Typography fontWeight={"bold"} variant="h6" component="h1">
-                    Returns
-                </Typography>
-                <Typography fontWeight={"bold"} variant="h6" component="h1">
-                    Privacy Policies
-                </Typography>
+                {help.map((name) => (
+                    <Typography
+                        key={name}
+                        fontWeight={"bold"}
+                        variant="h6"
+                        component="h1">
+                        {name}
+                    </Typography>
+                ))}
             </Box>
             <Box className="col4">Newsletter</Box>
         </Box>
