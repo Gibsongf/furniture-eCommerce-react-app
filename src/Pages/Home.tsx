@@ -3,6 +3,7 @@ import { Banner } from "../components/Home/Banner";
 import { Categories } from "../components/Home/HomeCategory";
 import GridProducts, { Product } from "../components/Products/GridProducts";
 import ShareSetupImages from "../components/Home/ShareSetup";
+import { fakeProducts } from "../utils";
 
 const BrowseRange = () => {
     return (
@@ -29,22 +30,6 @@ const ShareSetup = () => {
         </Box>
     );
 };
-const fakeData: Product[] = [
-    {
-        name: "Syltherine",
-        src: "src/assets/Home/product-1.png",
-        description: "Stylish cafe chair",
-        price: 100,
-        newProduct: true,
-    },
-    {
-        name: "Syltherine",
-        src: "src/assets/Home/product-1.png",
-        description: "Stylish cafe chair",
-        price: 100,
-        discount: "-50%",
-    },
-];
 
 export default function Home() {
     return (
@@ -60,7 +45,7 @@ export default function Home() {
                     component="h1">
                     Our Products
                 </Typography>
-                <GridProducts products={fakeData} />
+                <GridProducts products={fakeProducts} />
                 <ShareSetup />
                 <ShareSetupImages />
             </Stack>

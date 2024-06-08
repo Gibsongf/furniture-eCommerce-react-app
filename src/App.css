@@ -11,3 +11,12 @@
   background-image: url("src/assets/Home/banner-img2.jpg");
   background-size: cover;
 }
+
+.header-shop {
+  width: 100vw;
+  height: 300px;
+  background-image: url("src/assets/Shop/ec72522fa9004b621a6e6ed78cdd0543.jpeg");
+  background-size: cover;
+  background-position: center;
+
+}
