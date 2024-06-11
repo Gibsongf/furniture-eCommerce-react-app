@@ -1,7 +1,7 @@
 import { Typography, Box, Stack } from "@mui/material";
 import { Banner } from "../components/Home/Banner";
 import { Categories } from "../components/Home/HomeCategory";
-import GridProducts, { Product } from "../components/Products/GridProducts";
+import GridProducts from "../components/Products/GridProducts";
 import ShareSetupImages from "../components/Home/ShareSetup";
 import { fakeProducts } from "../utils";
 
