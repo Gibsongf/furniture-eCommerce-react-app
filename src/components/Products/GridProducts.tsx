@@ -1,9 +1,17 @@
 import { Product, ProductCard } from "./ProductCard";
 import { Box } from "@mui/material";
 
-export default function GridProducts({ products }: { products: Product[] }) {
-    const moreProducts: JSX.Element[] = products.map((product, index) => {
-        return <ProductCard key={index} product={product} />;
+export default function GridProducts({
+    products,
+    itemsPerPage,
+}: {
+    products: Product[];
+    itemsPerPage: string;
+}) {
+    const moreProducts = products.map((product, index) => {
+        if (index < Number(itemsPerPage)) {
+            return <ProductCard key={index} product={product} />;
+        }
     });
     return (
         <Box
