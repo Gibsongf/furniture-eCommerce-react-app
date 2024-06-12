@@ -8,7 +8,7 @@ export default function GridProducts({
     products: Product[];
     itemsPerPage: string;
 }) {
-    const moreProducts = products.map((product, index) => {
+    const ProductCardsArray = products?.map((product, index) => {
         if (index < Number(itemsPerPage)) {
             return <ProductCard key={index} product={product} />;
         }
@@ -23,7 +23,7 @@ export default function GridProducts({
                 width: "90%",
                 justifyItems: "center",
             }}>
-            {moreProducts}
+            {ProductCardsArray}
         </Box>
     );
 }

@@ -1,12 +1,11 @@
 import { ShopHeader } from "../components/Shop/ShopHeader";
 import GridProducts from "../components/Products/GridProducts";
-import { fakeProducts } from "../utils";
+import { pagination } from "../utils";
 import { Pagination, Stack } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ServiceBenefits } from "../components/Shop/ServiceBenefits";
-import { Product } from "../components/Products/ProductCard";
 import { ProductViewAdjuster } from "../components/Shop/ProductViewAdjuster";
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, useRef, useState, RefObject } from "react";
 const theme = createTheme({
     palette: {
         primary: { main: "#B88E2F" },
@@ -14,40 +13,52 @@ const theme = createTheme({
 });
 interface ShopContextType {
     itemsPage: string;
-    setItemPage: Dispatch<SetStateAction<string>>;
+    changeItemsCount: (event: Event) => void;
+    ref: RefObject<HTMLDivElement | undefined>;
 }
-export const ShopContext = createContext<ShopContextType>({
-    itemsPage: "",
-    setItemPage: () => {},
-});
+export const ShopContext = createContext<ShopContextType>(
+    {} as ShopContextType
+);
 
 export default function Shop() {
-    const moreProducts: Product[] = Array(32)
-        .fill(0)
-        .map((n, index) => {
-            const obj = { ...fakeProducts[index % 2] };
-            obj.price += index;
-            return obj;
-        });
+    //Specify the type as HTMLDivElement to avoid alert at scrollIntoView
+    const ProductViewAdjusterRef = useRef<HTMLDivElement>(null);
     const [itemsPage, setItemPage] = useState("8");
+    const [page, setPage] = useState(1);
+    const changeItemsCount = (event: Event) => {
+        const target = event.target as HTMLTextAreaElement;
+        setItemPage(target.value as string);
+        setPage(1);
+    };
+    const pagesObj = pagination(itemsPage);
+    const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+        setPage(value);
+        ProductViewAdjusterRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
         <>
             {" "}
             <ShopHeader />
             {/* need filter or sort by and info of how many items is in the page */}
             <Stack alignItems="center">
-                <ShopContext.Provider value={{ itemsPage, setItemPage }}>
+                <ShopContext.Provider
+                    value={{
+                        itemsPage,
+                        changeItemsCount,
+                        ref: ProductViewAdjusterRef,
+                    }}>
                     <ProductViewAdjuster />
                     <GridProducts
                         itemsPerPage={itemsPage}
-                        products={moreProducts}
+                        products={pagesObj[String(page - 1)]}
                     />
                     <ThemeProvider theme={theme}>
                         <Pagination
-                            count={5}
+                            count={Object.keys(pagesObj).length}
                             shape="rounded"
-                            // page={}
+                            page={page}
                             size="large"
+                            onChange={handleChange}
                             sx={{
                                 "& .MuiPagination-ul": {
                                     justifyContent: "center",

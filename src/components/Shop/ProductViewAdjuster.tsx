@@ -6,12 +6,12 @@ import { useContext, useState } from "react";
 import { ShopContext } from "../../Pages/Shop";
 
 function ShowItems() {
-    const { itemsPage, setItemPage } = useContext(ShopContext);
+    const { itemsPage, changeItemsCount } = useContext(ShopContext);
 
     const [show, setShow] = useState<string>(itemsPage);
     const handleChange = (event: SelectChangeEvent) => {
         setShow(event.target.value as string);
-        setItemPage(event.target.value as string);
+        changeItemsCount(event);
     };
     return (
         <>
@@ -89,8 +89,11 @@ function SortBy() {
     );
 }
 export function ProductViewAdjuster() {
+    const { ref } = useContext(ShopContext);
+
     return (
         <Box
+            ref={ref}
             display="flex"
             alignItems="center"
             justifyContent="flex-end"
