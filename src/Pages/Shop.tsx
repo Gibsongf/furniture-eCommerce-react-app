@@ -13,7 +13,7 @@ const theme = createTheme({
 });
 interface ShopContextType {
     itemsPage: string;
-    changeItemsCount: (event: Event) => void;
+    changeItemsCount: (event: string) => void;
     ref: RefObject<HTMLDivElement | undefined>;
 }
 export const ShopContext = createContext<ShopContextType>(
@@ -25,9 +25,8 @@ export default function Shop() {
     const ProductViewAdjusterRef = useRef<HTMLDivElement>(null);
     const [itemsPage, setItemPage] = useState("8");
     const [page, setPage] = useState(1);
-    const changeItemsCount = (event: Event) => {
-        const target = event.target as HTMLTextAreaElement;
-        setItemPage(target.value as string);
+    const changeItemsCount = (value: string) => {
+        setItemPage(value);
         setPage(1);
     };
     const pagesObj = pagination(itemsPage);

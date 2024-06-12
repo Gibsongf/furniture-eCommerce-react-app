@@ -7,11 +7,10 @@ import { ShopContext } from "../../Pages/Shop";
 
 function ShowItems() {
     const { itemsPage, changeItemsCount } = useContext(ShopContext);
-
     const [show, setShow] = useState<string>(itemsPage);
     const handleChange = (event: SelectChangeEvent) => {
         setShow(event.target.value as string);
-        changeItemsCount(event);
+        changeItemsCount(event.target.value as string);
     };
     return (
         <>
