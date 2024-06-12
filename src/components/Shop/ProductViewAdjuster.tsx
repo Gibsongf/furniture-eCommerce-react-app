@@ -37,6 +37,7 @@ function ShowItems() {
                     border: "none",
                     fontSize: "1.2rem",
                     padding: "15px",
+                    color: "#9F9F9F",
                 }}
                 disableUnderline>
                 <MenuItem value={"8"}>8</MenuItem>
@@ -47,7 +48,7 @@ function ShowItems() {
     );
 }
 function SortBy() {
-    const [sortBy, setSortBy] = useState("default");
+    const [sortBy, setSortBy] = useState("alphabetical");
 
     const handleChange = (event: SelectChangeEvent) => {
         setSortBy(event.target.value as string);
@@ -72,14 +73,15 @@ function SortBy() {
                     ".MuiOutlinedInput-notchedOutline": { border: 0 },
                     backgroundColor: "white",
                     margin: "10px",
-                    marginRight: "30px",
+                    marginRight: "50px",
                     fontWeight: "bold",
                     border: "none",
                     fontSize: "1.2rem",
                     padding: "15px",
+                    color: "#9F9F9F",
                 }}
                 disableUnderline>
-                <MenuItem value={"default"}>Default</MenuItem>
+                <MenuItem value={"alphabetical"}>Alphabetical</MenuItem>
                 <MenuItem value={"low"}>Price: low to high</MenuItem>
                 <MenuItem value={"high"}>Price: high to low</MenuItem>
                 <MenuItem value={"new"}>New</MenuItem>
@@ -101,6 +103,7 @@ export function ProductViewAdjuster() {
                 width: "100%",
                 paddingTop: "10px",
                 paddingBottom: "10px",
+                marginBottom: "45px",
             }}>
             <ShowItems />
             <SortBy />

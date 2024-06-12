@@ -47,27 +47,27 @@ export default function Shop() {
                         ref: ProductViewAdjusterRef,
                     }}>
                     <ProductViewAdjuster />
-                    <GridProducts
-                        itemsPerPage={itemsPage}
-                        products={pagesObj[String(page - 1)]}
-                    />
-                    <ThemeProvider theme={theme}>
-                        <Pagination
-                            count={Object.keys(pagesObj).length}
-                            shape="rounded"
-                            page={page}
-                            size="large"
-                            onChange={handleChange}
-                            sx={{
-                                "& .MuiPagination-ul": {
-                                    justifyContent: "center",
-                                },
-                                marginBottom: "30px",
-                            }}
-                            color="primary"
-                        />
-                    </ThemeProvider>
                 </ShopContext.Provider>
+                <GridProducts
+                    itemsPerPage={itemsPage}
+                    products={pagesObj[String(page - 1)]}
+                />
+                <ThemeProvider theme={theme}>
+                    <Pagination
+                        count={Object.keys(pagesObj).length}
+                        shape="rounded"
+                        page={page}
+                        size="large"
+                        onChange={handleChange}
+                        sx={{
+                            "& .MuiPagination-ul": {
+                                justifyContent: "center",
+                            },
+                            marginBottom: "30px",
+                        }}
+                        color="primary"
+                    />
+                </ThemeProvider>
 
                 <ServiceBenefits />
             </Stack>
