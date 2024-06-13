@@ -6,6 +6,7 @@ import {
 import { styled } from "@mui/system";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
+import { Box } from "@mui/material";
 
 const NumberInput = React.forwardRef(function CustomNumberInput(
     props: NumberInputProps,
@@ -41,12 +42,19 @@ export default function QuantityInput() {
         console.log(event.target, value);
     };
     return (
-        <NumberInput
-            onChange={onChange}
-            aria-label="Quantity Input"
-            min={1}
-            max={10}
-        />
+        <Box
+            sx={{
+                border: "black 1px solid",
+                borderRadius: "20px",
+                padding: "5px",
+            }}>
+            <NumberInput
+                onChange={onChange}
+                aria-label="Quantity Input"
+                min={1}
+                max={10}
+            />
+        </Box>
     );
 }
 
@@ -94,7 +102,7 @@ const StyledInput = styled("input")(
   line-height: 1.375;
   color: ${grey[800]};
   background: ${"#fff"};
-  border: 1px solid ${grey[200]};
+  border: none;
   box-shadow: 0px 2px 4px ${"rgba(0,0,0, 0.05)"};
   border-radius: 8px;
   margin: 0 8px;
@@ -103,16 +111,6 @@ const StyledInput = styled("input")(
   min-width: 0;
   width: 4rem;
   text-align: center;
-
-  &:hover {
-    border-color: ${"#B88E2F"};
-  }
-
-  &:focus {
-    border-color: ${"#B88E2F"};
-    box-shadow: 0 0 0 3px ${"#FFF3E3"};
-  }
-
   &:focus-visible {
     outline: 0;
   }
@@ -125,10 +123,8 @@ const StyledButton = styled("button")(
   font-size: 0.875rem;
   box-sizing: border-box;
   line-height: 1.5;
-  border: 1px solid;
-  border-radius: 999px;
-  border-color: ${grey[200]};
-  background: ${grey[50]};
+  border: none;
+  background: transparent;
   color: ${grey[900]};
   width: 32px;
   height: 32px;
@@ -142,9 +138,7 @@ const StyledButton = styled("button")(
 
   &:hover {
     cursor: pointer;
-    background: ${"#B88E2F"};
-    border-color: ${"#B88E2F"};
-    color: ${grey[50]};
+    color: black;
   }
 
   &:focus-visible {

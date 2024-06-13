@@ -35,6 +35,7 @@ const DetailsAction = () => {
             flexDirection="row"
             alignItems="center"
             flexWrap="wrap"
+            width="100%"
             gap="10px">
             <QuantityInput />
 
@@ -55,7 +56,8 @@ const Information = () => {
             display="flex"
             flexDirection={"column"}
             textAlign="left"
-            gap="20px">
+            gap="20px"
+            width="100%">
             <Typography variant="h2" component="h1">
                 Product Name
             </Typography>
