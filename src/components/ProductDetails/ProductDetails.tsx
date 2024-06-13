@@ -1,7 +1,7 @@
 import { Box, Divider, Grid, Stack } from "@mui/material";
-import { Product } from "../Products/ProductCard";
 import DetailsHeader from "./Header";
 import Information from "./Information";
+import BasicTabs from "./TabInfo";
 
 const Image = ({ title, src }: { title: string; src: string }) => {
     return (
@@ -73,6 +73,7 @@ export function ProductDetails() {
                 </Grid>
             </Grid>
             <Divider orientation="horizontal" flexItem />
+            <BasicTabs />
         </>
     );
 }
