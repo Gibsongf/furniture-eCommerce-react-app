@@ -1,7 +1,9 @@
-import { Box, Divider, Grid, Stack } from "@mui/material";
+import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
 import DetailsHeader from "./Header";
 import Information from "./Information";
 import BasicTabs from "./TabInfo";
+import { pagination } from "../../utils";
+import GridProducts from "../Products/GridProducts";
 
 const Image = ({ title, src }: { title: string; src: string }) => {
     return (
@@ -32,48 +34,55 @@ const SideImages = () => {
     );
 };
 export function ProductDetails() {
+    const product = pagination("4");
+
     return (
         <>
             <DetailsHeader />
-            <Grid
-                container
+            <Box
+                padding="20px 150px 20px 150px"
+                display="flex"
+                flexDirection="column"
                 justifyContent="center"
-                marginBottom="30px"
-                marginLeft="0"
-                columnSpacing={10}>
-                {/* <Grid
+                alignItems="center"
+                gap="20px"
+                marginBottom="30px">
+                <Grid
+                    container
+                    justifyContent="space-evenly"
+                    marginBottom="30px"
+                    marginLeft="0">
+                    <Grid
+                        item
+                        xs={5}
                         sx={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "flex-start",
-                        }}
-                        item
-                        xs={2}>
+                            gap: "50px",
+                        }}>
                         <SideImages />
-                    </Grid> */}
-                <Grid
-                    item
-                    xs={5}
-                    sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "flex-start",
-                        gap: "50px",
-                    }}>
-                    <SideImages />
-                    <img
-                        style={{ borderRadius: "10px", width: "90%" }}
-                        srcSet={``}
-                        src={"./src/assets/Home/product-1.png"}
-                        alt={"product-3"}
-                    />
+                        <img
+                            style={{ borderRadius: "10px", width: "65%" }}
+                            srcSet={``}
+                            src={"./src/assets/Home/product-1.png"}
+                            alt={"product-3"}
+                        />
+                    </Grid>
+                    <Grid item xs={5}>
+                        <Information />
+                    </Grid>
                 </Grid>
-                <Grid item xs={5}>
-                    <Information />
-                </Grid>
-            </Grid>
-            <Divider orientation="horizontal" flexItem />
-            <BasicTabs />
+                <Divider orientation="horizontal" flexItem />
+                <BasicTabs />
+                <Divider orientation="horizontal" flexItem />
+
+                <Typography fontWeight={"bold"} variant="h4" component="h1">
+                    More Products
+                </Typography>
+                <GridProducts products={product["0"]} itemsPerPage="4" />
+                <Divider orientation="horizontal" flexItem />
+            </Box>
         </>
     );
 }

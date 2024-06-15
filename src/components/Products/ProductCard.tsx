@@ -1,9 +1,10 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AddToCart } from "./AddCartHover";
 import { CircleBadge } from "./CicleCardBadge";
+import Zoom from "@mui/material/Zoom";
 
 export interface Product {
     name: string;
@@ -19,8 +20,16 @@ export interface Product {
 
 export function ProductCard({ product }: { product: Product }) {
     const [showAddCart, setShowAddCart] = useState<string>("none");
+    const [hover, setHover] = useState(false);
+    const onMouseEnter = () => {
+        setShowAddCart("flex");
+        setHover(true);
+    };
+    const onMouseOut = () => {
+        setShowAddCart("none");
+        setHover(false);
+    };
     const { name, price, src, description, newProduct, discount } = product;
-
     return (
         <Card
             sx={{
@@ -30,8 +39,8 @@ export function ProductCard({ product }: { product: Product }) {
                 width: "90%",
                 position: "relative",
             }}
-            onMouseEnter={() => setShowAddCart("flex")}
-            onMouseLeave={() => setShowAddCart("none")}>
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseOut}>
             <AddToCart display={showAddCart} />
             <CircleBadge isNew={newProduct} value={discount} />
 

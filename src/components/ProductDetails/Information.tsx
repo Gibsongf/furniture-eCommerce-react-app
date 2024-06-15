@@ -36,14 +36,20 @@ const DetailsAction = () => {
             alignItems="center"
             flexWrap="wrap"
             width="100%"
-            gap="10px">
+            gap="20px">
             <QuantityInput />
 
             <ThemeProvider theme={theme}>
-                <Button variant="outlined" type="text">
+                <Button
+                    sx={{ fontSize: "1.5rem" }}
+                    variant="outlined"
+                    type="text">
                     Add To Cart
                 </Button>
-                <Button variant="outlined" type="text">
+                <Button
+                    sx={{ fontSize: "1.5rem" }}
+                    variant="outlined"
+                    type="text">
                     Compare
                 </Button>
             </ThemeProvider>
@@ -56,7 +62,7 @@ const Information = () => {
             display="flex"
             flexDirection={"column"}
             textAlign="left"
-            gap="20px"
+            gap="30px"
             width="100%">
             <Typography variant="h2" component="h1">
                 Product Name
@@ -65,7 +71,12 @@ const Information = () => {
                 Value
             </Typography>
             <Box display="flex" flexDirection="row" gap="10px">
-                <Rating name="half-rating" defaultValue={3} precision={1} />
+                <Rating
+                    name="half-rating"
+                    defaultValue={3}
+                    precision={1}
+                    readOnly
+                />
                 <Divider orientation="vertical" flexItem />
                 <Typography
                     color={"#9F9F9F"}
