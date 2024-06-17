@@ -32,6 +32,7 @@ const ShareSetup = () => {
 };
 
 export default function Home() {
+    // api call to get product or just fake data
     return (
         <>
             <Banner />
@@ -45,7 +46,7 @@ export default function Home() {
                     component="h1">
                     Our Products
                 </Typography>
-                <GridProducts products={fakeProducts} />
+                <GridProducts products={fakeProducts} itemsPerPage="4" />
                 <ShareSetup />
                 <ShareSetupImages />
             </Stack>

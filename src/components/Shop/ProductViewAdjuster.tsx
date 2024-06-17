@@ -47,6 +47,7 @@ function ShowItems() {
         </>
     );
 }
+//receive the product and then sort it all type available or per option selection?
 function SortBy() {
     const [sortBy, setSortBy] = useState("alphabetical");
 

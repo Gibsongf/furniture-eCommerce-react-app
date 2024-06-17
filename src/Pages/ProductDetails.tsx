@@ -1,9 +1,9 @@
 import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
-import DetailsHeader from "./Header";
-import Information from "./Information";
-import BasicTabs from "./TabInfo";
-import { pagination } from "../../utils";
-import GridProducts from "../Products/GridProducts";
+import DetailsHeader from "../components/ProductDetails/Header";
+import Information from "../components/ProductDetails/Information";
+import BasicTabs from "../components/ProductDetails/TabInfo";
+import { pagination } from "../utils";
+import GridProducts from "../components/Products/GridProducts";
 
 const Image = ({ title, src }: { title: string; src: string }) => {
     return (
@@ -35,12 +35,12 @@ const SideImages = () => {
 };
 export function ProductDetails() {
     const product = pagination("4");
-
+    // {img1, img2, img3, img4,resumedInfo?, full Info?}
     return (
         <>
             <DetailsHeader />
             <Box
-                padding="20px 150px 20px 150px"
+                padding="20px 5rem 20px 5rem"
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"

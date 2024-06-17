@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+//breadcrumbs is need here
 const DetailsHeader = () => {
     return (
         <Box

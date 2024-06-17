@@ -29,6 +29,9 @@ const theme = createTheme({
     },
 });
 const DetailsAction = () => {
+    // add cart on click
+    // compare on click
+
     return (
         <Box
             display="flex"
@@ -57,6 +60,7 @@ const DetailsAction = () => {
     );
 };
 const Information = () => {
+    // {name, value, overallRating, numsOfReview, description}
     return (
         <Box
             display="flex"

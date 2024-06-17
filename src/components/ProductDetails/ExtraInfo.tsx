@@ -47,6 +47,7 @@ export const DescriptionDetails = () => {
 
 // const AdditionalInformation = () => {};
 const Review = () => {
+    //{username, userReview, dateReview,location?, reviewText}
     return (
         <Card sx={{ margin: "30px", padding: "1rem", textAlign: "left" }}>
             {" "}
@@ -83,6 +84,8 @@ const Review = () => {
     );
 };
 export const ListReview = () => {
+    //overall rating value
+    //a list of the product review
     // const value = 4; //will receive this from the product info and pass to rating
     // const reviewNum = 10;//total of review
     return (

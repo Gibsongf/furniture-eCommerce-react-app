@@ -20,6 +20,7 @@ const theme = createTheme({
 });
 
 export const AddToCart = ({ display }: { display: string }) => {
+    // on click action to add to cart and update nums of product
     return (
         <div
             style={{

@@ -20,14 +20,11 @@ export interface Product {
 
 export function ProductCard({ product }: { product: Product }) {
     const [showAddCart, setShowAddCart] = useState<string>("none");
-    const [hover, setHover] = useState(false);
     const onMouseEnter = () => {
         setShowAddCart("flex");
-        setHover(true);
     };
     const onMouseOut = () => {
         setShowAddCart("none");
-        setHover(false);
     };
     const { name, price, src, description, newProduct, discount } = product;
     return (
