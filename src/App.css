@@ -20,3 +20,12 @@
   background-position: center;
 
 }
+
+#cart-item-quantity {
+  border: solid 1px #9F9F9F;
+}
+
+#cart-item-quantity:focus-visible {
+  outline: none;
+  border: 1px solid #B88E2F;
+}

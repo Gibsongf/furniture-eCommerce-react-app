@@ -5,9 +5,9 @@ import {
     Button,
     ThemeProvider,
     createTheme,
+    TextField,
 } from "@mui/material";
 import { fakeProducts } from "../../utils";
-
 const theme = createTheme({
     components: {
         MuiButton: {
@@ -22,7 +22,7 @@ const theme = createTheme({
                         color: "#B88E2F",
                     },
                     textTransform: "none",
-                    padding: "10px 55px 10px 55px",
+                    padding: "4% 25%",
                     marginBottom: "15px",
                     color: "black",
                 },
@@ -30,9 +30,17 @@ const theme = createTheme({
         },
     },
 });
+// need to separate some components, we have to much stuffs in one place
 export const CartItems = () => {
     const { name, src, description, price, newProduct } = fakeProducts[0];
-    const align: string[] = ["left", "left", "left", "right", "left", "center"];
+    const align: string[] = [
+        "left",
+        "left",
+        "left",
+        "center",
+        "center",
+        "center",
+    ];
     const headerStyle = (col: number) => {
         const index = col - 1;
         const style: object = {
@@ -54,6 +62,7 @@ export const CartItems = () => {
             alignContent: "center",
             padding: "0.8vw 1.7vw",
             textAlign: align[index],
+            justifyContent: "center",
         };
         return style;
     };
@@ -74,42 +83,62 @@ export const CartItems = () => {
                         gridTemplateColumns: "repeat(6, minmax(50px, 1fr))",
                     }}>
                     <Typography sx={headerStyle(1)}></Typography>
-                    <Typography textAlign="left" sx={headerStyle(2)}>
-                        Product
-                    </Typography>
-                    <Typography textAlign="left" sx={headerStyle(3)}>
-                        Price
-                    </Typography>
-                    <Typography textAlign="right" sx={headerStyle(4)}>
-                        Quantity
-                    </Typography>
-                    <Typography textAlign="left" sx={headerStyle(5)}>
-                        Subtotal
-                    </Typography>
+                    <Typography sx={headerStyle(2)}>Product</Typography>
+                    <Typography sx={headerStyle(3)}>Price</Typography>
+                    <Typography sx={headerStyle(4)}>Quantity</Typography>
+                    <Typography sx={headerStyle(5)}>Subtotal</Typography>
                     <Typography sx={headerStyle(6)}>DEL</Typography>
-
                     <img
                         style={{
                             width: "100%",
-                            maxWidth: "105px",
+                            maxWidth: "130px",
+                            height: "100%",
+                            maxHeight: "130px",
                             gridColumn: "1",
                             gridRow: "2",
+                            borderRadius: "15px",
                         }}
                         src={src}
                         alt="title"
                         srcSet=""
                     />
-
-                    <Typography textAlign="left" sx={productStyle(2)}>
+                    <Typography
+                        variant="subtitle1"
+                        component="h1"
+                        color={"#9F9F9F"}
+                        sx={productStyle(2)}>
                         {name}
                     </Typography>
-                    <Typography textAlign="left" sx={productStyle(3)}>
+                    <Typography
+                        variant="subtitle1"
+                        component="h2"
+                        fontWeight="bold"
+                        color={"#9F9F9F"}
+                        sx={productStyle(3)}>
                         {price}
                     </Typography>
-                    <Typography textAlign="right" sx={productStyle(4)}>
-                        1
-                    </Typography>
-                    <Typography textAlign="left" sx={productStyle(5)}>
+                    <input
+                        style={{
+                            gridColumn: "4",
+                            gridRow: "2",
+                            alignContent: "center",
+                            padding: "0.8vw 0.5vw",
+                            textAlign: "center",
+                            alignSelf: "center",
+                            justifySelf: "center",
+                            width: "50%",
+                        }}
+                        type="number"
+                        name="quantity"
+                        id="cart-item-quantity"
+                        min={1}
+                        max={10}
+                    />
+                    <Typography
+                        variant="subtitle1"
+                        component="h3"
+                        fontWeight="bold"
+                        sx={productStyle(5)}>
                         1000
                     </Typography>
                     <Typography sx={productStyle(6)}>DEL</Typography>
@@ -119,7 +148,7 @@ export const CartItems = () => {
                 <Box
                     sx={{
                         backgroundColor: "#F9F1E7",
-                        padding: "15px 50px 50px 50px",
+                        padding: "8% 20% 10% 20%",
                     }}>
                     <Typography
                         variant="h5"
@@ -131,7 +160,7 @@ export const CartItems = () => {
                     <Box
                         display="flex"
                         justifyContent="space-between"
-                        marginBottom="20px">
+                        marginBottom="30px">
                         <Typography
                             fontWeight="bold"
                             variant="subtitle1"
@@ -149,7 +178,7 @@ export const CartItems = () => {
                         display="flex"
                         justifyContent="space-between"
                         alignItems="center"
-                        marginBottom="25px">
+                        marginBottom="30px">
                         <Typography
                             fontWeight="bold"
                             variant="subtitle1"
