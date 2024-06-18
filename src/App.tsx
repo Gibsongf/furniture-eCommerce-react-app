@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer";
 import { Nav } from "./components/NavBar";
 // import { ProductDetails } from "./Pages/ProductDetails";
 function App() {
-    // a object cart ?
+    // a object context cart ?
     return (
         <>
             <Nav />

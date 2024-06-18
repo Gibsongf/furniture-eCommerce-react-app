@@ -33,6 +33,7 @@ const ShareSetup = () => {
 
 export default function Home() {
     // api call to get product or just fake data
+
     return (
         <>
             <Banner />
