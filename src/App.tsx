@@ -7,6 +7,7 @@ import { Nav } from "./components/NavBar";
 import "./App.css";
 
 // import { ProductDetails } from "./Pages/ProductDetails";
+
 function App() {
     // a object context cart ?
     return (

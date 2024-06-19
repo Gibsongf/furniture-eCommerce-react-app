@@ -1,8 +1,24 @@
-import { Box, TextField, Typography } from "@mui/material";
+import {
+    Box,
+    Typography,
+    Button,
+    ThemeProvider,
+    createTheme,
+    Divider,
+    TextField,
+} from "@mui/material";
 
+const theme = createTheme({
+    palette: {
+        primary: { main: "#B88E2F" },
+    },
+});
 export const FormBill = () => {
     const style = {
-        "& .MuiOutlinedInput-root": { borderRadius: "8px", padding: "8px" },
+        "& .MuiOutlinedInput-root": {
+            borderRadius: "8px",
+            padding: "8px",
+        },
         "& .MuiInputLabel-root": { top: "8px" },
     };
     return (
@@ -24,28 +40,38 @@ export const FormBill = () => {
                     Billing details
                 </Typography>
             </legend>
-            <Box display="flex" gap="20px">
-                <TextField sx={style} id="first-name" label="First Name" />
-                <TextField sx={style} id="last-name" label="Last Name" />
-            </Box>
-            <TextField
-                sx={style}
-                id="company-name"
-                label="Company Name (Optional)"
-                fullWidth
-            />
-            <TextField sx={style} id="country-region" label="County / Region" />
-            <TextField sx={style} id="street-address" label="Street address" />
-            <TextField sx={style} id="town-city" label="Town / City" />
+            <ThemeProvider theme={theme}>
+                <Box display="flex" gap="20px">
+                    <TextField sx={style} id="first-name" label="First Name" />
+                    <TextField sx={style} id="last-name" label="Last Name" />
+                </Box>
+                <TextField
+                    sx={style}
+                    id="company-name"
+                    label="Company Name (Optional)"
+                    fullWidth
+                />
+                <TextField
+                    sx={style}
+                    id="country-region"
+                    label="County / Region"
+                />
+                <TextField
+                    sx={style}
+                    id="street-address"
+                    label="Street address"
+                />
+                <TextField sx={style} id="town-city" label="Town / City" />
 
-            <TextField sx={style} id="zip-code" label="ZIP code" />
-            <TextField sx={style} id="phone" label="Phone" />
-            <TextField
-                sx={style}
-                id="email-address"
-                type="email"
-                label="Email address"
-            />
+                <TextField sx={style} id="zip-code" label="ZIP code" />
+                <TextField sx={style} id="phone" label="Phone" />
+                <TextField
+                    sx={style}
+                    id="email-address"
+                    type="email"
+                    label="Email address"
+                />
+            </ThemeProvider>
         </Box>
     );
 };
