@@ -1,13 +1,13 @@
-import { Typography, Box, Stack } from "@mui/material";
+import { Typography, Box, Stack, Divider } from "@mui/material";
 import { Banner } from "../components/Home/Banner";
 import { Categories } from "../components/Home/HomeCategory";
 import GridProducts from "../components/Products/GridProducts";
 import ShareSetupImages from "../components/Home/ShareSetup";
-import { fakeProducts } from "../utils";
+import { pagination } from "../utils";
 
 const BrowseRange = () => {
     return (
-        <Box marginTop="30px" marginBottom="30px">
+        <Box marginBottom="30px">
             <Typography fontWeight="bold" variant="h5" component="h2">
                 Browse The Range
             </Typography>
@@ -20,7 +20,7 @@ const BrowseRange = () => {
 };
 const ShareSetup = () => {
     return (
-        <Box marginBottom="20px" marginTop="80px">
+        <Box marginBottom="20px">
             <Typography color="#616161" variant="h6" component="h1">
                 Share your setup with
             </Typography>
@@ -33,13 +33,16 @@ const ShareSetup = () => {
 
 export default function Home() {
     // api call to get product or just fake data
+    const pagesObj = pagination("8");
 
     return (
         <>
             <Banner />
-            <Stack alignItems="center">
+            <Stack alignItems="center" padding="100px">
                 <BrowseRange />
                 <Categories />
+                <Divider variant="middle" />
+
                 <Typography
                     margin={5}
                     fontWeight={"bold"}
@@ -47,10 +50,10 @@ export default function Home() {
                     component="h1">
                     Our Products
                 </Typography>
-                <GridProducts products={fakeProducts} itemsPerPage="4" />
-                <ShareSetup />
-                <ShareSetupImages />
+                <GridProducts products={pagesObj["0"]} itemsPerPage="8" />
             </Stack>
+            <ShareSetup />
+            <ShareSetupImages />
         </>
     );
 }

@@ -9,7 +9,7 @@ export default function ShareSetupImages() {
     return (
         <Box
             sx={{
-                width: "99%",
+                width: "100%",
                 backgroundColor: "#FCF8F3",
                 overflowY: "hidden",
                 borderBottom: "solid 1px #616161",

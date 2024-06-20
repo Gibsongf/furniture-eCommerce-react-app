@@ -30,14 +30,14 @@ export function ProductCard({ product }: { product: Product }) {
     return (
         <Card
             sx={{
-                border: "black solid 1px",
                 backgroundColor: "#F4F5F7",
                 borderRadius: "0px",
                 width: "90%",
                 position: "relative",
             }}
             onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseOut}>
+            onMouseLeave={onMouseOut}
+            elevation={0}>
             <AddToCart display={showAddCart} />
             <CircleBadge isNew={newProduct} value={discount} />
 
