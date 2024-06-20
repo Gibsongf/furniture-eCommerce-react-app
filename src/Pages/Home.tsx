@@ -41,13 +41,15 @@ export default function Home() {
             {/* <Stack alignItems="center" padding="100px"> */}
             <BrowseRange />
             <Categories />
-            <Divider variant="middle" />
+            <Divider flexItem />
 
             <Typography fontWeight={"bold"} variant="h4" component="h1">
                 Our Products
             </Typography>
             <GridProducts products={pagesObj["0"]} itemsPerPage="8" />
             {/* </Stack> */}
+            <Divider flexItem />
+
             <ShareSetup />
             <ShareSetupImages />
         </>

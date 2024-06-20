@@ -31,13 +31,14 @@ export const CartContent = () => {
     return (
         <Grid
             container
-            justifyContent={"center"}
-            gap={5}
+            justifyContent={"space-between"}
+            // gap={5}
             sx={{
                 marginTop: "70px",
-                marginBottom: "70px",
+                marginBottom: "40px",
+                width: "90%",
             }}>
-            <Grid item xs={6}>
+            <Grid item xs={8}>
                 <Box
                     sx={{
                         display: "grid",

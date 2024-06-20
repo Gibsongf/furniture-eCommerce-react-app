@@ -80,7 +80,6 @@ export function ProductDetails() {
                     More Products
                 </Typography>
                 <GridProducts products={product["0"]} itemsPerPage="4" />
-                <Divider orientation="horizontal" flexItem />
             </Box>
         </>
     );
