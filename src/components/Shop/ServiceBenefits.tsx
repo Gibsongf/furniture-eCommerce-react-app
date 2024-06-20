@@ -14,10 +14,10 @@ export const ServiceBenefits = () => {
                 backgroundColor: "#F9F1E7",
                 width: "99vw",
                 height: "100px",
-                padding: "10px 20px",
+                padding: "30px 20px",
             }}>
             <Box display="flex" gap={1} alignItems="center">
-                <EmojiEventsOutlinedIcon sx={{ fontSize: 50 }} />
+                <EmojiEventsOutlinedIcon sx={{ fontSize: 70 }} />
                 <Box textAlign="left">
                     <Typography
                         fontWeight="bold"
@@ -35,7 +35,7 @@ export const ServiceBenefits = () => {
                 </Box>
             </Box>
             <Box display="flex" gap={1} alignItems="center">
-                <VerifiedOutlinedIcon sx={{ fontSize: 50 }} />
+                <VerifiedOutlinedIcon sx={{ fontSize: 70 }} />
                 <Box textAlign="left">
                     <Typography
                         fontWeight="bold"
@@ -53,7 +53,7 @@ export const ServiceBenefits = () => {
                 </Box>
             </Box>
             <Box display="flex" gap={1} alignItems="center">
-                <CardGiftcardOutlinedIcon sx={{ fontSize: 50 }} />
+                <CardGiftcardOutlinedIcon sx={{ fontSize: 70 }} />
                 <Box textAlign="left">
                     <Typography
                         fontWeight="bold"
@@ -71,7 +71,7 @@ export const ServiceBenefits = () => {
                 </Box>
             </Box>
             <Box display="flex" gap={1} alignItems="center">
-                <SupportAgentOutlinedIcon sx={{ fontSize: 50 }} />
+                <SupportAgentOutlinedIcon sx={{ fontSize: 70 }} />
                 <Box textAlign="left">
                     <Typography
                         fontWeight="bold"
