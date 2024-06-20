@@ -36,12 +36,20 @@ export default function BasicTabs() {
     };
 
     return (
-        <Box sx={{ width: "100%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box>
+            <Box>
                 <Tabs
                     value={value}
                     onChange={handleChange}
                     aria-label="extra-info"
+                    textColor="inherit"
+                    indicatorColor="null"
+                    sx={{
+                        "& .Mui-selected": {
+                            fontWeight: "bold",
+                        },
+                        marginBottom: "15px",
+                    }}
                     centered>
                     <Tab label="Description" value={0} />
                     {/* <Tab label="Additional Information" value={1} /> */}

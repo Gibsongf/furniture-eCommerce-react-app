@@ -8,10 +8,8 @@ const DetailsHeader = () => {
             justifyContent="flex-start"
             sx={{
                 backgroundColor: "#F9F1E7",
-                width: "100%",
-                paddingTop: "50px",
-                paddingBottom: "10px",
-                marginBottom: "45px",
+                width: "99vw",
+                padding: "40px 0px",
             }}>
             Home("#9F9F9F") - Shop("#9F9F9F") - Produto Nome
         </Box>

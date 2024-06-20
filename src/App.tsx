@@ -17,8 +17,8 @@ function App() {
             <Nav />
             <Stack alignItems="center" padding="10px 100px" gap="30px">
                 {/* <Home /> */}
-                <Shop />
-                {/* <ProductDetails /> */}
+                {/* <Shop /> */}
+                <ProductDetails />
                 {/* <Cart /> */}
                 {/* <CheckOut /> */}
             </Stack>

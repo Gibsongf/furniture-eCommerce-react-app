@@ -11,7 +11,6 @@ export const DescriptionDetails = () => {
             padding="15px">
             <Typography
                 sx={{
-                    width: "80%",
                     alignSelf: "center",
                 }}
                 textAlign="left"

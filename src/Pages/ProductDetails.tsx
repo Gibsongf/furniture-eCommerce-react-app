@@ -40,7 +40,6 @@ export function ProductDetails() {
         <>
             <DetailsHeader />
             <Box
-                padding="20px 5rem 20px 5rem"
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"
