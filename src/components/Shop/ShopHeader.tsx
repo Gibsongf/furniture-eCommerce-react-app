@@ -12,6 +12,7 @@ export const ShopHeader = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-end",
+                width: "99vw",
             }}>
             <Box
                 sx={{

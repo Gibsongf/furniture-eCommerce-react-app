@@ -12,10 +12,9 @@ export const ServiceBenefits = () => {
             justifyContent="space-around"
             sx={{
                 backgroundColor: "#F9F1E7",
-                width: "100%",
+                width: "99vw",
                 height: "100px",
-                paddingTop: "10px",
-                paddingBottom: "10px",
+                padding: "10px 20px",
             }}>
             <Box display="flex" gap={1} alignItems="center">
                 <EmojiEventsOutlinedIcon sx={{ fontSize: 50 }} />

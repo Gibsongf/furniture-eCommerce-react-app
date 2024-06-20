@@ -39,38 +39,35 @@ export default function Shop() {
             {" "}
             <ShopHeader />
             {/* need filter or sort by and info of how many items is in the page */}
-            <Stack alignItems="center">
-                <ShopContext.Provider
-                    value={{
-                        itemsPage,
-                        changeItemsCount,
-                        ref: ProductViewAdjusterRef,
-                    }}>
-                    <ProductViewAdjuster />
-                </ShopContext.Provider>
+            <ShopContext.Provider
+                value={{
+                    itemsPage,
+                    changeItemsCount,
+                    ref: ProductViewAdjusterRef,
+                }}>
+                <ProductViewAdjuster />
                 <GridProducts
                     itemsPerPage={itemsPage}
                     products={pagesObj[String(page - 1)]}
                 />
-                <ThemeProvider theme={theme}>
-                    <Pagination
-                        count={Object.keys(pagesObj).length}
-                        shape="rounded"
-                        page={page}
-                        size="large"
-                        onChange={handleChange}
-                        sx={{
-                            "& .MuiPagination-ul": {
-                                justifyContent: "center",
-                            },
-                            marginBottom: "30px",
-                        }}
-                        color="primary"
-                    />
-                </ThemeProvider>
-
-                <ServiceBenefits />
-            </Stack>
+            </ShopContext.Provider>
+            <ThemeProvider theme={theme}>
+                <Pagination
+                    count={Object.keys(pagesObj).length}
+                    shape="rounded"
+                    page={page}
+                    size="large"
+                    onChange={handleChange}
+                    sx={{
+                        "& .MuiPagination-ul": {
+                            justifyContent: "center",
+                        },
+                        margin: "30px",
+                    }}
+                    color="primary"
+                />
+            </ThemeProvider>
+            <ServiceBenefits />
         </>
     );
 }

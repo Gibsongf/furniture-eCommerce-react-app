@@ -19,7 +19,6 @@ export default function GridProducts({
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr));",
                 rowGap: "35px",
-                padding: "2rem",
                 width: "90%",
                 justifyItems: "center",
             }}>

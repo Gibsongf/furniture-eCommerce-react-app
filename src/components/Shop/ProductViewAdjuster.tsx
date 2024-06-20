@@ -36,7 +36,7 @@ function ShowItems() {
                     fontWeight: "bold",
                     border: "none",
                     fontSize: "1.2rem",
-                    padding: "15px",
+                    padding: "10px",
                     color: "#9F9F9F",
                 }}
                 disableUnderline>
@@ -78,7 +78,7 @@ function SortBy() {
                     fontWeight: "bold",
                     border: "none",
                     fontSize: "1.2rem",
-                    padding: "15px",
+                    padding: "10px",
                     color: "#9F9F9F",
                 }}
                 disableUnderline>
@@ -101,13 +101,15 @@ export function ProductViewAdjuster() {
             justifyContent="flex-end"
             sx={{
                 backgroundColor: "#F9F1E7",
-                width: "100%",
-                paddingTop: "10px",
-                paddingBottom: "10px",
-                marginBottom: "45px",
+                width: "99vw",
+                padding: "10px 0px",
+                marginBottom: "25px",
+                marginTop: "-30px", //stay close to the header
             }}>
-            <ShowItems />
-            <SortBy />
+            <Box marginRight="100px" display="flex" alignItems="center">
+                <ShowItems />
+                <SortBy />
+            </Box>
         </Box>
     );
 }
