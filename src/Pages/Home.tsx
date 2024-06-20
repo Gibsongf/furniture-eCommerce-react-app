@@ -7,7 +7,7 @@ import { pagination } from "../utils";
 
 const BrowseRange = () => {
     return (
-        <Box marginBottom="30px">
+        <Box>
             <Typography fontWeight="bold" variant="h5" component="h2">
                 Browse The Range
             </Typography>
@@ -20,7 +20,7 @@ const BrowseRange = () => {
 };
 const ShareSetup = () => {
     return (
-        <Box marginBottom="20px">
+        <Box>
             <Typography color="#616161" variant="h6" component="h1">
                 Share your setup with
             </Typography>
@@ -38,20 +38,16 @@ export default function Home() {
     return (
         <>
             <Banner />
-            <Stack alignItems="center" padding="100px">
-                <BrowseRange />
-                <Categories />
-                <Divider variant="middle" />
+            {/* <Stack alignItems="center" padding="100px"> */}
+            <BrowseRange />
+            <Categories />
+            <Divider variant="middle" />
 
-                <Typography
-                    margin={5}
-                    fontWeight={"bold"}
-                    variant="h4"
-                    component="h1">
-                    Our Products
-                </Typography>
-                <GridProducts products={pagesObj["0"]} itemsPerPage="8" />
-            </Stack>
+            <Typography fontWeight={"bold"} variant="h4" component="h1">
+                Our Products
+            </Typography>
+            <GridProducts products={pagesObj["0"]} itemsPerPage="8" />
+            {/* </Stack> */}
             <ShareSetup />
             <ShareSetupImages />
         </>

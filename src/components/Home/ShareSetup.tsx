@@ -9,12 +9,12 @@ export default function ShareSetupImages() {
     return (
         <Box
             sx={{
-                width: "100%",
-                backgroundColor: "#FCF8F3",
+                width: "99vw",
                 overflowY: "hidden",
                 borderBottom: "solid 1px #616161",
+                paddingBottom: "20px",
             }}>
-            <ImageList variant="masonry" cols={4} gap={10}>
+            <ImageList variant="masonry" cols={5} gap={20}>
                 {imgSrc.map((src) => (
                     <ImageListItem key={src}>
                         <img src={src} loading="lazy" />

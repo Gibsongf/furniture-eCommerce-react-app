@@ -47,6 +47,7 @@ export const Banner = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-end",
+                width: "99vw",
             }}>
             <NewArrival />
         </div>
