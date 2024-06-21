@@ -1,5 +1,6 @@
-import { Button, Box, Typography } from "@mui/material";
+import { Button, Box, Typography, ThemeProvider } from "@mui/material";
 import "../../../src/App.css";
+import { themeBanner } from "../Theme";
 const NewArrival = () => {
     return (
         <Box
@@ -25,17 +26,9 @@ const NewArrival = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 scelerisque odio et enim tristique.
             </Typography>
-            <Button
-                sx={{
-                    backgroundColor: "#B88E2F",
-                    color: "white",
-                    fontWeight: "bold",
-                    padding: "10px 75px 10px 75px",
-                    textAlign: "center",
-                }}
-                variant="text">
-                BUY NOW
-            </Button>
+            <ThemeProvider theme={themeBanner}>
+                <Button variant="text">BUY NOW</Button>
+            </ThemeProvider>
         </Box>
     );
 };

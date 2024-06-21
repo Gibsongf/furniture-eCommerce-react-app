@@ -11,16 +11,15 @@ import { Stack } from "@mui/material";
 //need to make all pages look alike at the side space of the whole page
 function App() {
     // a object context cart ?
-    Stack;
     return (
         <>
             <Nav />
             <Stack alignItems="center" padding="10px 100px" gap="30px">
-                {/* <Home /> */}
-                {/* <Shop /> */}
-                {/* <ProductDetails /> */}
-                {/* <Cart /> */}
-                {/* <CheckOut /> */}
+                <Home />
+                <Shop />
+                <ProductDetails />
+                <Cart />
+                <CheckOut />
             </Stack>
             <Footer />
         </>

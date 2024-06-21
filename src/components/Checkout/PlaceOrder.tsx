@@ -1,34 +1,5 @@
-import {
-    Box,
-    Typography,
-    Button,
-    ThemeProvider,
-    createTheme,
-    Divider,
-} from "@mui/material";
-const theme = createTheme({
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    fontSize: "1.1rem",
-                    border: "solid black 1px",
-                    borderRadius: "15px",
-                    width: "70%",
-                    ":hover": {
-                        backgroundColor: "#fff3e34a",
-                        borderColor: "#B88E2F",
-                        color: "#B88E2F",
-                    },
-                    textTransform: "none",
-                    padding: "3%",
-                    marginTop: "35px",
-                    color: "black",
-                },
-            },
-        },
-    },
-});
+import { Box, Typography, Button, ThemeProvider, Divider } from "@mui/material";
+import { themePlaceOrder } from "../Theme";
 
 export const PlaceOrder = () => {
     // props Subtotal, Total, discount
@@ -98,7 +69,7 @@ export const PlaceOrder = () => {
                 </Typography>
             </Box>
             <Divider orientation="horizontal" />
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={themePlaceOrder}>
                 <Button>Place Order</Button>
             </ThemeProvider>
         </Box>

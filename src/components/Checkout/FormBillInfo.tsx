@@ -3,16 +3,11 @@ import {
     Typography,
     Button,
     ThemeProvider,
-    createTheme,
     Divider,
     TextField,
 } from "@mui/material";
+import { themePaletteColor } from "../Theme";
 
-const theme = createTheme({
-    palette: {
-        primary: { main: "#B88E2F" },
-    },
-});
 export const FormBill = () => {
     const style = {
         "& .MuiOutlinedInput-root": {
@@ -40,7 +35,7 @@ export const FormBill = () => {
                     Billing details
                 </Typography>
             </legend>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={themePaletteColor}>
                 <Box display="flex" gap="20px">
                     <TextField sx={style} id="first-name" label="First Name" />
                     <TextField sx={style} id="last-name" label="Last Name" />

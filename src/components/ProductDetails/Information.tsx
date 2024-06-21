@@ -5,29 +5,10 @@ import {
     Rating,
     ThemeProvider,
     Typography,
-    createTheme,
 } from "@mui/material";
 import QuantityInput from "./QuantityInput";
-const theme = createTheme({
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    fontSize: "1.2rem",
-                    border: "solid black 1px",
-                    borderRadius: "15px",
-                    ":hover": {
-                        backgroundColor: "#fff3e34a",
-                        borderColor: "#B88E2F",
-                    },
-                    textTransform: "none",
-                    padding: "10px 45px 10px 45px",
-                    color: "black",
-                },
-            },
-        },
-    },
-});
+import { themeInformation } from "../Theme";
+
 const DetailsAction = () => {
     // add cart on click
     // compare on click
@@ -42,17 +23,11 @@ const DetailsAction = () => {
             gap="20px">
             <QuantityInput />
 
-            <ThemeProvider theme={theme}>
-                <Button
-                    sx={{ fontSize: "1.5rem" }}
-                    variant="outlined"
-                    type="text">
+            <ThemeProvider theme={themeInformation}>
+                <Button variant="outlined" type="text">
                     Add To Cart
                 </Button>
-                <Button
-                    sx={{ fontSize: "1.5rem" }}
-                    variant="outlined"
-                    type="text">
+                <Button variant="outlined" type="text">
                     Compare
                 </Button>
             </ThemeProvider>

@@ -1,16 +1,13 @@
 import { ShopHeader } from "../components/Shop/ShopHeader";
 import GridProducts from "../components/Products/GridProducts";
 import { pagination } from "../utils";
-import { Pagination, Stack } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Pagination } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { ServiceBenefits } from "../components/Shop/ServiceBenefits";
 import { ProductViewAdjuster } from "../components/Shop/ProductViewAdjuster";
 import { createContext, useRef, useState, RefObject } from "react";
-const theme = createTheme({
-    palette: {
-        primary: { main: "#B88E2F" },
-    },
-});
+import { themePaletteColor } from "../components/Theme";
+
 interface ShopContextType {
     itemsPage: string;
     changeItemsCount: (event: string) => void;
@@ -51,7 +48,7 @@ export default function Shop() {
                     products={pagesObj[String(page - 1)]}
                 />
             </ShopContext.Provider>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={themePaletteColor}>
                 <Pagination
                     count={Object.keys(pagesObj).length}
                     shape="rounded"

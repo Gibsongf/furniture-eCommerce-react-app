@@ -5,29 +5,7 @@ import {
     ThemeProvider,
     createTheme,
 } from "@mui/material";
-const theme = createTheme({
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    fontSize: "1.1rem",
-                    border: "solid black 1px",
-                    borderRadius: "15px",
-                    width: "100%",
-                    ":hover": {
-                        backgroundColor: "#fff3e34a",
-                        borderColor: "#B88E2F",
-                        color: "#B88E2F",
-                    },
-                    textTransform: "none",
-                    padding: "4% 1%",
-                    marginBottom: "15px",
-                    color: "black",
-                },
-            },
-        },
-    },
-});
+import { themeCheckOut } from "../Theme";
 
 export const CheckOutCard = () => {
     // props Subtotal, Total, discount
@@ -77,7 +55,7 @@ export const CheckOutCard = () => {
                     R$10000
                 </Typography>
             </Box>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={themeCheckOut}>
                 <Button>Check Out</Button>
             </ThemeProvider>
         </Box>
