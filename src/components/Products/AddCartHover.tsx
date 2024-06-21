@@ -20,35 +20,36 @@ const theme = createTheme({
         },
     },
 });
-const DisplayAddToCart = (
-    <Box
-        sx={{
-            display: "flex",
-            position: "absolute",
-            backgroundColor: "rgba(58, 58, 58, 0.5)",
-            width: "100%",
-            height: "100%",
-            zIndex: "2",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-        }}>
-        <ThemeProvider theme={theme}>
-            <Button
-                sx={{
-                    backgroundColor: "white",
-                    color: "#B88E2F",
-                }}
-                disableElevation={true}
-                variant="text">
-                Add to cart
-            </Button>
-        </ThemeProvider>
-    </Box>
-);
 
 export const AddToCart = ({ show }: { show: boolean }) => {
     // on click action to add to cart and update nums of product
+    const DisplayAddToCart = (
+        <Box
+            sx={{
+                display: "flex",
+                position: "absolute",
+                backgroundColor: "rgba(58, 58, 58, 0.5)",
+                width: "100%",
+                height: "100%",
+                zIndex: "2",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+            }}>
+            {/*a onClick func to add to cart */}
+            <ThemeProvider theme={theme}>
+                <Button
+                    sx={{
+                        backgroundColor: "white",
+                        color: "#B88E2F",
+                    }}
+                    disableElevation={true}
+                    variant="text">
+                    Add to cart
+                </Button>
+            </ThemeProvider>
+        </Box>
+    );
     return (
         <Box>
             <Grow in={show}>{DisplayAddToCart}</Grow>
