@@ -13,6 +13,8 @@ export const ShopHeader = () => {
                 alignItems: "center",
                 justifyContent: "flex-end",
                 width: "99vw",
+                //to ignore gap of stack in app.tsx
+                // paddingTop: "-10px",
             }}>
             <Box
                 sx={{

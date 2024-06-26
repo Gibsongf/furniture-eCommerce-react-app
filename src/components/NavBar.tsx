@@ -17,7 +17,6 @@ const Menu = () => {
             flexWrap={"wrap"}>
             <Button variant="text">Home</Button>
             <Button variant="text">Shop</Button>
-            <Button variant="text">About</Button>
             <Button variant="text">Contact</Button>
         </Stack>
     );
@@ -49,11 +48,8 @@ const IconMenu = () => {
             justifyContent="space-evenly"
             flexWrap={"wrap"}>
             <SearchInput />
-            {/* <IconButton aria-label="user">
-                <Person2 fontSize="large" sx={{ fill: "black" }} />
-            </IconButton> */}
             <IconButton aria-label="shopping-cart">
-                {/* change to badge at mui */}
+                {/* change to mui badge */}
                 <ShoppingCart fontSize="large" sx={{ fill: "black" }} />
             </IconButton>
         </Stack>
@@ -63,7 +59,12 @@ export const Nav = () => {
     return (
         <ThemeProvider theme={themeNav}>
             <Grid
-                sx={{ margin: "0", fontWeight: "bold" }}
+                sx={{
+                    margin: "0",
+                    fontWeight: "bold",
+                    "& .MuiGrid-item": { padding: "0" },
+                    width: "99vw",
+                }}
                 container
                 spacing={3}
                 alignItems={"center"}>

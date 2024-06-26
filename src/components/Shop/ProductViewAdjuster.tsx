@@ -104,7 +104,7 @@ export function ProductViewAdjuster() {
                 width: "99vw",
                 padding: "10px 0px",
                 marginBottom: "25px",
-                marginTop: "-30px", //stay close to the header
+                marginTop: "-30px", //stay close to the header ignore stack gap
             }}>
             <Box marginRight="100px" display="flex" alignItems="center">
                 <ShowItems />

@@ -14,7 +14,7 @@ export const ServiceBenefits = () => {
                 backgroundColor: "#F9F1E7",
                 width: "99vw",
                 height: "100px",
-                padding: "30px 20px",
+                padding: "20px 0px",
             }}>
             <Box display="flex" gap={1} alignItems="center">
                 <EmojiEventsOutlinedIcon sx={{ fontSize: 70 }} />

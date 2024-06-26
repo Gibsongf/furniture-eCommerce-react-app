@@ -7,18 +7,25 @@ import { Nav } from "./components/NavBar";
 import { ProductDetails } from "./Pages/ProductDetails";
 import "./App.css";
 import { Stack } from "@mui/material";
+import { Contact } from "./components/Contact/Contact";
 
 //need to make all pages look alike at the side space of the whole page
 function App() {
-    // a object context cart ?
+    //
+    //todo
+    //routes
+    // a object context cart
+    //side bar cart with items
+
     return (
         <>
             <Nav />
 
-            <Stack alignItems="center" padding="10px 100px" gap="30px">
+            <Stack alignItems="center" padding="0px 100px" gap="30px">
                 {/* <Home /> */}
-                <Shop />
+                {/* <Shop /> */}
                 {/* <ProductDetails /> */}
+                <Contact />
                 {/* <Cart /> */}
                 {/* <CheckOut /> */}
             </Stack>

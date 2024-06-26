@@ -1,7 +1,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 
 export const Footer = () => {
-    const link: string[] = ["Home", "Shop", "About"];
+    const link: string[] = ["Home", "Shop"];
     const help: string[] = ["Payment Options", "Returns", "Privacy Policies"];
     const style: object = {
         display: "flex",
