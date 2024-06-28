@@ -8,6 +8,7 @@ import { ProductDetails } from "./Pages/ProductDetails";
 import "./App.css";
 import { Stack } from "@mui/material";
 import { Contact } from "./components/Contact/Contact";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 //need to make all pages look alike at the side space of the whole page
 function App() {
@@ -16,7 +17,6 @@ function App() {
     //routes
     // a object context cart
     //side bar cart with items
-
     return (
         <>
             <Nav />
@@ -25,7 +25,10 @@ function App() {
                 {/* <Home /> */}
                 {/* <Shop /> */}
                 {/* <ProductDetails /> */}
-                <Contact />
+                {/* <Contact /> */}
+                <ScrollRestoration />
+
+                <Outlet />
                 {/* <Cart /> */}
                 {/* <CheckOut /> */}
             </Stack>

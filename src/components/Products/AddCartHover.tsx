@@ -1,8 +1,8 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Box, Button } from "@mui/material";
+import { Box, Button, IconButton } from "@mui/material";
 import Grow from "@mui/material/Grow";
-import { useState } from "react";
-
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { Link } from "react-router-dom";
 const theme = createTheme({
     components: {
         MuiButton: {
@@ -35,6 +35,7 @@ export const AddToCart = ({ show }: { show: boolean }) => {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                gap: "15px",
             }}>
             {/*a onClick func to add to cart */}
             <ThemeProvider theme={theme}>
@@ -47,12 +48,22 @@ export const AddToCart = ({ show }: { show: boolean }) => {
                     variant="text">
                     Add to cart
                 </Button>
+                <IconButton aria-label="shopping-cart">
+                    <Link to="/product/id">
+                        <AddCircleOutlineIcon
+                            fontSize="large"
+                            sx={{ fill: "white" }}
+                        />
+                    </Link>
+                </IconButton>
             </ThemeProvider>
         </Box>
     );
     return (
         <Box>
-            <Grow in={show}>{DisplayAddToCart}</Grow>
+            <Grow {...(show ? { timeout: 150 } : {})} in={show}>
+                {DisplayAddToCart}
+            </Grow>
         </Box>
     );
 };

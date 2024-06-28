@@ -29,13 +29,13 @@ export const DescriptionDetails = () => {
             <Box display="flex" justifyContent="space-around">
                 <img
                     srcSet={``}
-                    src={"./src/assets/Home/product-1.png"}
+                    src={"../src/assets/Home/product-1.png"}
                     alt={"product-1"}
                     style={{ width: "490px", height: "305px" }}
                 />
                 <img
                     srcSet={``}
-                    src={"./src/assets/Home/product-1.png"}
+                    src={"../src/assets/Home/product-1.png"}
                     alt={"product-2"}
                     style={{ width: "490px", height: "305px" }}
                 />

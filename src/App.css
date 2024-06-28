@@ -21,6 +21,12 @@
 
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: black
+}
+
 #cart-item-quantity {
   border: solid 1px #9F9F9F;
 }
