@@ -3,6 +3,8 @@ import { Box, Button, IconButton } from "@mui/material";
 import Grow from "@mui/material/Grow";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import { Product } from "./ProductCard";
 const theme = createTheme({
     components: {
         MuiButton: {
@@ -21,8 +23,20 @@ const theme = createTheme({
     },
 });
 
-export const AddToCart = ({ show }: { show: boolean }) => {
+type CallBackCart = (product: Product) => void;
+//shop button add to cart
+export const ShopAddToCart = ({
+    show,
+    product,
+}: {
+    show: boolean;
+    product: Product;
+}) => {
     // on click action to add to cart and update nums of product
+    const [addProduct] = useOutletContext<[CallBackCart]>();
+    const saveProductInfo = () => {
+        addProduct(product);
+    };
     const DisplayAddToCart = (
         <Box
             sx={{
@@ -45,7 +59,8 @@ export const AddToCart = ({ show }: { show: boolean }) => {
                         color: "#B88E2F",
                     }}
                     disableElevation={true}
-                    variant="text">
+                    variant="text"
+                    onClick={saveProductInfo}>
                     Add to cart
                 </Button>
                 <IconButton aria-label="shopping-cart">

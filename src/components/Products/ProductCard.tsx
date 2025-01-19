@@ -2,7 +2,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-import { AddToCart } from "./AddCartHover";
+import { ShopAddToCart } from "./AddCartHover";
 import { CircleBadge } from "./CicleCardBadge";
 
 export interface Product {
@@ -37,7 +37,7 @@ export function ProductCard({ product }: { product: Product }) {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseOut}
             elevation={0}>
-            <AddToCart show={showAddCart} />
+            <ShopAddToCart show={showAddCart} product={product} />
             <CircleBadge isNew={newProduct} value={discount} />
 
             <img style={{ width: "100%" }} src={src} alt="title" srcSet="" />

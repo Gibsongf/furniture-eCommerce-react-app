@@ -27,9 +27,6 @@ const DetailsAction = () => {
                 <Button variant="outlined" type="text">
                     Add To Cart
                 </Button>
-                {/* <Button variant="outlined" type="text">
-                    Compare
-                </Button> */}
             </ThemeProvider>
         </Box>
     );
