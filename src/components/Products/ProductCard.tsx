@@ -10,8 +10,10 @@ export interface Product {
     price: number;
     src: string;
     description: string;
+    preview: string;
     newProduct?: boolean;
     discount?: string;
+    total?: number;
 }
 
 //a discount circle cor red with percentage of it
@@ -25,7 +27,7 @@ export function ProductCard({ product }: { product: Product }) {
     const onMouseOut = () => {
         setShowAddCart(false);
     };
-    const { name, price, src, description, newProduct, discount } = product;
+    const { name, price, src, preview, newProduct, discount } = product;
     return (
         <Card
             sx={{
@@ -46,7 +48,7 @@ export function ProductCard({ product }: { product: Product }) {
                     {name.replace(name[0], name[0].toUpperCase())}
                 </Typography>
                 <Typography color="#898989" variant="h6" component="h2">
-                    {description}
+                    {preview}
                 </Typography>
                 <Typography fontWeight="bold" variant="h5" component="h1">
                     R${price}

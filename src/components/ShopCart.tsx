@@ -1,13 +1,5 @@
-import { useMemo, useState } from "react";
-
-export interface Product {
-    name: string;
-    price: number;
-    src: string;
-    quantity: number;
-    discount?: string;
-    total?: number;
-}
+import { useState } from "react";
+import { Product } from "./Products/ProductCard";
 // Specify the type for the state
 type ProductState = {
     [key: string]: Product;
@@ -15,7 +7,7 @@ type ProductState = {
 
 export const useCart = () => {
     const [products, setProducts] = useState<ProductState>({});
-    const [detailsProduct, setDetailsProducts] = useState({});
+    const [iconQuantity, setIconQuantity] = useState(0);
     const addProduct = (product: Product) => {
         console.log(product);
         setProducts((prev) => {
@@ -33,9 +25,7 @@ export const useCart = () => {
 
         return;
     };
-    const SaveDetailsProduct = (product: Product) => {
-        setDetailsProducts(product);
-    };
+
     const removeProduct = (product: Product) => {
         setProducts(() => {
             delete products[product.name];
@@ -46,8 +36,8 @@ export const useCart = () => {
         addProduct,
         removeProduct,
         products,
-        SaveDetailsProduct,
-        detailsProduct,
+        iconQuantity,
+        setIconQuantity,
     };
     //sum function that sum all product with their values quantity and apply discount
 };

@@ -3,8 +3,9 @@ import { Box, Button, IconButton } from "@mui/material";
 import Grow from "@mui/material/Grow";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { Link } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
 import { Product } from "./ProductCard";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../App";
 const theme = createTheme({
     components: {
         MuiButton: {
@@ -33,10 +34,15 @@ export const ShopAddToCart = ({
     product: Product;
 }) => {
     // on click action to add to cart and update nums of product
-    const [addProduct] = useOutletContext<[CallBackCart]>();
-    const saveProductInfo = () => {
+    const { addProduct } = useContext(ShoppingCartContext);
+    const addCart = () => {
         addProduct(product);
     };
+    const saveProductInfo = () => {
+        // save in browser
+        localStorage.setItem("selected-product", JSON.stringify(product));
+    };
+
     const DisplayAddToCart = (
         <Box
             sx={{
@@ -60,11 +66,14 @@ export const ShopAddToCart = ({
                     }}
                     disableElevation={true}
                     variant="text"
-                    onClick={saveProductInfo}>
+                    onClick={addCart}>
                     Add to cart
                 </Button>
-                <IconButton aria-label="shopping-cart">
-                    <Link to="/product/id">
+                <IconButton
+                    aria-label="shopping-cart"
+                    onClick={saveProductInfo}>
+                    {/* here the id of the product as url */}
+                    <Link to={`/product/${product.name}`}>
                         <AddCircleOutlineIcon
                             fontSize="large"
                             sx={{ fill: "white" }}

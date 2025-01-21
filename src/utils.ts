@@ -1,17 +1,23 @@
 import { Product } from "./components/Products/ProductCard";
 
+// products will need more info like side images and the current review of it
+
 export const fakeProducts: Product[] = [
     {
         name: "Syltherine",
         src: "src/assets/Home/product-1.png",
-        description: "Stylish cafe chair",
+        preview: "Stylish cafe chair",
+        description:
+            "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,sem quam semper libero, sit amet adipiscing sem neque sedipsum. Nam quam nunc, blandit vel, luctus pulvinar,hendrerit id, lorem.",
         price: 100,
         newProduct: true,
     },
     {
         name: "Syltherine",
         src: "src/assets/Home/product-1.png",
-        description: "Stylish cafe chair",
+        preview: "Stylish cafe chair",
+        description:
+            "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,sem quam semper libero, sit amet adipiscing sem neque sedipsum. Nam quam nunc, blandit vel, luctus pulvinar,hendrerit id, lorem.",
         price: 100,
         discount: "-50%",
     },

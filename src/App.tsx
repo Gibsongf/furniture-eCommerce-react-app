@@ -7,28 +7,35 @@ import { Stack } from "@mui/material";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { createContext } from "react";
 import { useCart } from "./components/ShopCart";
-
-export const ShoppingCart = createContext({
+import { Product } from "./components/Products/ProductCard";
+export const ShoppingCartContext = createContext({
     products: {},
-    updateProducts: () => {},
-    changeProductQuantity: () => {},
-    removeProduct: () => {},
+    addProduct: (product: Product) => {},
+    removeProduct: (product: Product) => {},
     iconQuantity: 0,
-    total: 0,
 });
 function App() {
-    const cart = useCart();
+    const { addProduct, removeProduct, products, iconQuantity } = useCart();
     //
     //todo
     //routes
     // a object context cart
     //side bar cart with items
+    //remove context outlet and do a normal context is more easy than this for now
     return (
         <>
             <Nav />
             <Stack alignItems="center" padding="0px 100px" gap="30px">
                 <ScrollRestoration />
-                <Outlet context={[cart.addProduct]} />
+                <ShoppingCartContext.Provider
+                    value={{
+                        addProduct,
+                        removeProduct,
+                        products,
+                        iconQuantity,
+                    }}>
+                    <Outlet />
+                </ShoppingCartContext.Provider>
             </Stack>
             <Footer />
         </>

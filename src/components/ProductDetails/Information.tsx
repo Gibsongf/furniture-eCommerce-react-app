@@ -8,10 +8,14 @@ import {
 } from "@mui/material";
 import QuantityInput from "./QuantityInput";
 import { themeInformation } from "../Theme";
+import { Product } from "../ShopCart";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../App";
 
 const DetailsAction = () => {
     // add cart on click
     // compare on click
+    const { addProduct } = useContext(ShoppingCartContext);
 
     return (
         <Box
@@ -33,6 +37,17 @@ const DetailsAction = () => {
 };
 const Information = () => {
     // {name, value, overallRating, numsOfReview, description}
+    const storedProduct = localStorage.getItem("selected-product");
+    let detailsProduct = {
+        name: "null",
+        price: "null",
+        description: "null",
+    };
+
+    // Parse and assign only if storedProduct exists
+    if (storedProduct) {
+        detailsProduct = JSON.parse(storedProduct);
+    }
     return (
         <Box
             display="flex"
@@ -41,10 +56,10 @@ const Information = () => {
             gap="30px"
             width="100%">
             <Typography variant="h2" component="h1">
-                Product Name
+                {detailsProduct.name}
             </Typography>
             <Typography color={"#9F9F9F"} variant="h4" component="h5">
-                Value
+                {detailsProduct.price}
             </Typography>
             <Box display="flex" flexDirection="row" gap="10px">
                 <Rating
@@ -63,11 +78,7 @@ const Information = () => {
             </Box>
             <Box width="80%">
                 <Typography variant="subtitle1" component="h6">
-                    Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam
-                    rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,
-                    sem quam semper libero, sit amet adipiscing sem neque sed
-                    ipsum. Nam quam nunc, blandit vel, luctus pulvinar,
-                    hendrerit id, lorem.
+                    {detailsProduct.description}
                 </Typography>
             </Box>
             <DetailsAction />
