@@ -12,7 +12,6 @@ const NumberInput = React.forwardRef(function CustomNumberInput(
     props: NumberInputProps,
     ref: React.ForwardedRef<HTMLDivElement>
 ) {
-    console.log(props);
     return (
         <BaseNumberInput
             // onChange={onChange}
@@ -37,9 +36,16 @@ const NumberInput = React.forwardRef(function CustomNumberInput(
     );
 });
 
-export default function QuantityInput() {
-    const onChange = (event, value) => {
-        console.log(event.target, value);
+//need to link this val quantity to the product when add to cart is clicked
+export default function QuantityInput({
+    quantity,
+    setQuantity,
+}: {
+    quantity: number;
+    setQuantity: (val: number) => void;
+}) {
+    const onChange = (event, val) => {
+        setQuantity(val);
     };
     return (
         <Box
@@ -53,6 +59,7 @@ export default function QuantityInput() {
                 aria-label="Quantity Input"
                 min={1}
                 max={10}
+                value={quantity}
             />
         </Box>
     );

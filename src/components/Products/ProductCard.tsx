@@ -11,6 +11,7 @@ export interface Product {
     src: string;
     description: string;
     preview: string;
+    quantity: number;
     newProduct?: boolean;
     discount?: string;
     total?: number;

@@ -1,11 +1,31 @@
 import { Box, Typography } from "@mui/material";
-import { fakeProducts } from "../../utils";
+// import { fakeProducts } from "../../utils";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Product } from "./ProductCard";
+import { ChangeEvent, useContext, useState } from "react";
+import { ShoppingCartContext } from "../../App";
 
-const { name, src, price } = fakeProducts[0];
+// export interface Product {
+//     name: string;
+//     price: number;
+//     src: string;
+//     description: string;
+//     preview: string;
+//     quantity: number;
+//     newProduct?: boolean;
+//     discount?: string;
+//     total?: number;
+// }
 
-export const CartProduct = () => {
-    // props = name, imgSrc, price, quantity, subtotal?
+export const CartProduct = ({ product }: { product: Product }) => {
+    const { name, src, price, quantity } = product;
+    const [productQuantity, setQuantity] = useState(quantity);
+    const { updateProduct } = useContext(ShoppingCartContext);
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const val = Number(e.target.value);
+        setQuantity(val);
+        updateProduct(name, "quantity", val);
+    };
     const align: string[] = [
         "left",
         "left",
@@ -77,6 +97,8 @@ export const CartProduct = () => {
                 id="cart-item-quantity"
                 min={1}
                 max={10}
+                value={productQuantity}
+                onChange={handleChange}
             />
             <Typography
                 variant="subtitle1"

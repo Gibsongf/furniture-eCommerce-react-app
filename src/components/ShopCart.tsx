@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Product } from "./Products/ProductCard";
 // Specify the type for the state
 type ProductState = {
@@ -9,9 +9,9 @@ export const useCart = () => {
     const [products, setProducts] = useState<ProductState>({});
     const [iconQuantity, setIconQuantity] = useState(0);
     const addProduct = (product: Product) => {
-        console.log(product);
+        // console.log(product);
         setProducts((prev) => {
-            console.log(prev);
+            // console.log(prev);
             if (prev[product.name]) {
                 return { ...prev };
             }
@@ -25,19 +25,31 @@ export const useCart = () => {
 
         return;
     };
-
+    const updateProduct = (name: string, key: string, value) => {
+        setProducts((prev) => {
+            if (!prev[name]) {
+                return prev;
+            }
+            return {
+                ...prev,
+                [name]: { ...prev[name], [key]: value },
+            };
+        });
+    };
     const removeProduct = (product: Product) => {
         setProducts(() => {
             delete products[product.name];
             return { ...products };
         });
     };
+    useEffect(() => {}, [products], console.log(products));
     return {
         addProduct,
         removeProduct,
         products,
         iconQuantity,
         setIconQuantity,
+        updateProduct,
     };
     //sum function that sum all product with their values quantity and apply discount
 };

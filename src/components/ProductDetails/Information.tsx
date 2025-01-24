@@ -6,17 +6,22 @@ import {
     ThemeProvider,
     Typography,
 } from "@mui/material";
+import { Product } from "../Products/ProductCard";
 import QuantityInput from "./QuantityInput";
 import { themeInformation } from "../Theme";
-import { Product } from "../ShopCart";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
 
-const DetailsAction = () => {
+const DetailsAction = ({ product }: { product: Product }) => {
     // add cart on click
     // compare on click
     const { addProduct } = useContext(ShoppingCartContext);
-
+    const [quantity, setQuantity] = useState(1);
+    const onClickAdd = () => {
+        // a func that will get the current quantity and apply to product before being add
+        product.quantity = quantity;
+        addProduct(product);
+    };
     return (
         <Box
             display="flex"
@@ -25,10 +30,10 @@ const DetailsAction = () => {
             flexWrap="wrap"
             width="100%"
             gap="20px">
-            <QuantityInput />
+            <QuantityInput quantity={quantity} setQuantity={setQuantity} />
 
             <ThemeProvider theme={themeInformation}>
-                <Button variant="outlined" type="text">
+                <Button onClick={onClickAdd} variant="outlined" type="text">
                     Add To Cart
                 </Button>
             </ThemeProvider>
@@ -81,7 +86,7 @@ const Information = () => {
                     {detailsProduct.description}
                 </Typography>
             </Box>
-            <DetailsAction />
+            <DetailsAction product={detailsProduct} />
         </Box>
     );
 };

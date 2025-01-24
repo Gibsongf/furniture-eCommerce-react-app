@@ -12,10 +12,12 @@ export const ShoppingCartContext = createContext({
     products: {},
     addProduct: (product: Product) => {},
     removeProduct: (product: Product) => {},
+    updateProduct: (name: string, key: string, value) => {},
     iconQuantity: 0,
 });
 function App() {
-    const { addProduct, removeProduct, products, iconQuantity } = useCart();
+    const { addProduct, removeProduct, products, iconQuantity, updateProduct } =
+        useCart();
     //
     //todo
     //routes
@@ -33,6 +35,7 @@ function App() {
                         removeProduct,
                         products,
                         iconQuantity,
+                        updateProduct,
                     }}>
                     <Outlet />
                 </ShoppingCartContext.Provider>

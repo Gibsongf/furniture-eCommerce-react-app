@@ -3,9 +3,12 @@ import { ShopHeader } from "../Shop/ShopHeader";
 import { Box, Grid, Typography } from "@mui/material";
 import { CartProduct } from "../Products/CartProduct";
 import { CheckOutCard } from "./CheckOutCard";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../App";
 
 // need to separate some components, we have to much stuffs in one place
 export const CartContent = () => {
+    const { products } = useContext(ShoppingCartContext);
     const align: string[] = [
         "left",
         "left",
@@ -27,7 +30,15 @@ export const CartContent = () => {
         };
         return style;
     };
-
+    const ProductInCart = () => {
+        // console.log(products);
+        const keys = Object.keys(products);
+        if (!keys.length) return <></>;
+        return keys.map((k, i) => {
+            // console.log(products[k]);
+            return <CartProduct key={i} product={products[k]} />;
+        });
+    };
     return (
         <Grid
             container
@@ -53,8 +64,7 @@ export const CartContent = () => {
                     <Typography sx={headerStyle(6)}></Typography>
                 </Box>
                 {/* here a map with the product list  */}
-                <CartProduct />
-                <CartProduct />
+                <ProductInCart />
             </Grid>
             <Grid item xs={3}>
                 <CheckOutCard />
