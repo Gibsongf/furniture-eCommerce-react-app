@@ -18,13 +18,16 @@ import { ShoppingCartContext } from "../../App";
 // }
 
 export const CartProduct = ({ product }: { product: Product }) => {
-    const { name, src, price, quantity } = product;
+    const { name, src, price, quantity, discount } = product;
     const [productQuantity, setQuantity] = useState(quantity);
-    const { updateProduct } = useContext(ShoppingCartContext);
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { updateProduct, removeProduct } = useContext(ShoppingCartContext);
+    const handleQuantity = (e: ChangeEvent<HTMLInputElement>) => {
         const val = Number(e.target.value);
         setQuantity(val);
         updateProduct(name, "quantity", val);
+    };
+    const handleRemove = () => {
+        removeProduct(name);
     };
     const align: string[] = [
         "left",
@@ -45,6 +48,15 @@ export const CartProduct = ({ product }: { product: Product }) => {
             justifyContent: "center",
         };
         return style;
+    };
+    const discountVal = () => {
+        if (discount) {
+            const dec = discount / 100;
+            const dis = dec * price;
+            const sub = price - dis;
+            return sub * quantity;
+        }
+        return price * quantity;
     };
     return (
         <Box
@@ -98,14 +110,14 @@ export const CartProduct = ({ product }: { product: Product }) => {
                 min={1}
                 max={10}
                 value={productQuantity}
-                onChange={handleChange}
+                onChange={handleQuantity}
             />
             <Typography
                 variant="subtitle1"
                 component="h3"
                 fontWeight="bold"
                 sx={productStyle(5)}>
-                10003
+                {discountVal()}
             </Typography>
             <DeleteIcon
                 fontSize="large"
@@ -114,6 +126,7 @@ export const CartProduct = ({ product }: { product: Product }) => {
                     gridColumn: "6",
                     color: "#B88E2F",
                 }}
+                onClick={handleRemove}
             />
         </Box>
     );

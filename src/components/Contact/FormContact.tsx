@@ -19,7 +19,10 @@ export function FormContact() {
                 <TextField label="Message" multiline rows={4} />
             </ThemeProvider>
             <ThemeProvider theme={themeBanner}>
-                <Button sx={{ padding: "6px 8px" }} variant="text">
+                <Button
+                    className="submit-contact"
+                    sx={{ padding: "6px 8px" }}
+                    variant="text">
                     Submit
                 </Button>
             </ThemeProvider>

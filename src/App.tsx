@@ -8,11 +8,20 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 import { createContext } from "react";
 import { useCart } from "./components/ShopCart";
 import { Product } from "./components/Products/ProductCard";
-export const ShoppingCartContext = createContext({
-    products: {},
-    addProduct: (product: Product) => {},
-    removeProduct: (product: Product) => {},
-    updateProduct: (name: string, key: string, value) => {},
+type ProductState = {
+    [key: string]: Product;
+};
+export const ShoppingCartContext = createContext<{
+    products: ProductState;
+    addProduct: (product: Product) => void;
+    removeProduct: (name: string) => void;
+    updateProduct: (name: string, key: string, value: number | string) => void;
+    iconQuantity: number;
+}>({
+    products: {}, // Provide an empty object as the default value for products
+    addProduct: () => {},
+    removeProduct: () => {},
+    updateProduct: () => {},
     iconQuantity: 0,
 });
 function App() {

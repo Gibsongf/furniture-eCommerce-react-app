@@ -20,7 +20,7 @@ export const fakeProducts: Product[] = [
         description:
             "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,sem quam semper libero, sit amet adipiscing sem neque sedipsum. Nam quam nunc, blandit vel, luctus pulvinar,hendrerit id, lorem.",
         price: 100,
-        discount: "-50%",
+        discount: 50,
         quantity: 1,
     },
 ];

@@ -3,14 +3,14 @@ import { Box, Typography } from "@mui/material";
 //#E97171 promo
 interface CircleBadge {
     isNew: boolean | undefined;
-    value: string | undefined;
+    value: string | number | undefined;
 }
 export const CircleBadge = ({ isNew, value }: CircleBadge) => {
     let color: string = "#2EC1AC";
-    let text: string = "New";
+    let text: string | number = "New";
     if (value && !isNew) {
         color = "#E97171";
-        text = value;
+        text = `-${value}%`;
     } else if (!value && !isNew) return;
     return (
         <Box

@@ -13,7 +13,7 @@ export interface Product {
     preview: string;
     quantity: number;
     newProduct?: boolean;
-    discount?: string;
+    discount?: number;
     total?: number;
 }
 

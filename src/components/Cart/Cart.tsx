@@ -35,7 +35,6 @@ export const CartContent = () => {
         const keys = Object.keys(products);
         if (!keys.length) return <></>;
         return keys.map((k, i) => {
-            // console.log(products[k]);
             return <CartProduct key={i} product={products[k]} />;
         });
     };
