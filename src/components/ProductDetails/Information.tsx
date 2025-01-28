@@ -13,12 +13,9 @@ import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
 
 const DetailsAction = ({ product }: { product: Product }) => {
-    // add cart on click
-    // compare on click
     const { addProduct } = useContext(ShoppingCartContext);
     const [quantity, setQuantity] = useState(1);
     const onClickAdd = () => {
-        // a func that will get the current quantity and apply to product before being add
         product.quantity = quantity;
         addProduct(product);
     };

@@ -6,8 +6,8 @@ import { useContext, useState } from "react";
 import { ShopContext } from "../../Pages/Shop";
 
 function ShowItems() {
-    const { itemsPage, changeItemsCount } = useContext(ShopContext);
-    const [show, setShow] = useState<string>(itemsPage);
+    const { itemsPerPage, changeItemsCount } = useContext(ShopContext);
+    const [show, setShow] = useState<string>(itemsPerPage);
     const handleChange = (event: SelectChangeEvent) => {
         setShow(event.target.value as string);
         changeItemsCount(event.target.value as string);
@@ -49,7 +49,7 @@ function ShowItems() {
 }
 //receive the product and then sort it all type available or per option selection?
 function SortBy() {
-    const [sortBy, setSortBy] = useState("alphabetical");
+    const { sortBy, setSortBy } = useContext(ShopContext);
 
     const handleChange = (event: SelectChangeEvent) => {
         setSortBy(event.target.value as string);
@@ -82,10 +82,8 @@ function SortBy() {
                     color: "#9F9F9F",
                 }}
                 disableUnderline>
-                <MenuItem value={"alphabetical"}>Alphabetical</MenuItem>
-                <MenuItem value={"low"}>Price: low to high</MenuItem>
-                <MenuItem value={"high"}>Price: high to low</MenuItem>
-                <MenuItem value={"new"}>New</MenuItem>
+                <MenuItem value={"descending"}>Price: low to high</MenuItem>
+                <MenuItem value={"ascending"}>Price: high to low</MenuItem>
             </Select>
         </>
     );

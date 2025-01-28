@@ -9,8 +9,10 @@ import { createContext, useRef, useState, RefObject } from "react";
 import { themePaletteColor } from "../components/Theme";
 
 interface ShopContextType {
-    itemsPage: string;
+    itemsPerPage: string;
     changeItemsCount: (event: string) => void;
+    sortBy: string;
+    setSortBy: (value: string) => void;
     ref: RefObject<HTMLDivElement | undefined>;
 }
 export const ShopContext = createContext<ShopContextType>(
@@ -18,15 +20,16 @@ export const ShopContext = createContext<ShopContextType>(
 );
 
 export default function Shop() {
-    //Specify the type as HTMLDivElement to avoid alert at scrollIntoView
+    //specify the type as HTMLDivElement to avoid alert at scrollIntoView
     const ProductViewAdjusterRef = useRef<HTMLDivElement>(null);
-    const [itemsPage, setItemPage] = useState("8");
+    const [itemsPerPage, setItemPage] = useState("8");
     const [page, setPage] = useState(1);
+    const [sortBy, setSortBy] = useState("descending");
     const changeItemsCount = (value: string) => {
         setItemPage(value);
         setPage(1);
     };
-    const pagesObj = pagination(itemsPage);
+    const pagesObj = pagination(itemsPerPage);
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value);
         ProductViewAdjusterRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -36,15 +39,18 @@ export default function Shop() {
             {" "}
             <ShopHeader />
             {/* need filter or sort by and info of how many items is in the page */}
+            {/* the sort event should happen at grid product only in the item at the current page*/}
             <ShopContext.Provider
                 value={{
-                    itemsPage,
+                    itemsPerPage,
                     changeItemsCount,
                     ref: ProductViewAdjusterRef,
+                    sortBy,
+                    setSortBy,
                 }}>
                 <ProductViewAdjuster />
                 <GridProducts
-                    itemsPerPage={itemsPage}
+                    itemsPerPage={itemsPerPage}
                     products={pagesObj[String(page - 1)]}
                 />
             </ShopContext.Provider>

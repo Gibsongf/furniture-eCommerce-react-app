@@ -42,7 +42,6 @@ export const useCart = () => {
             return { ...products };
         });
     };
-    useEffect(() => {}, [products], console.log(products));
     return {
         addProduct,
         removeProduct,

@@ -1,5 +1,8 @@
+import { useContext, useState } from "react";
 import { Product, ProductCard } from "./ProductCard";
 import { Box } from "@mui/material";
+import { ShopContext } from "../../Pages/Shop";
+import { mergeSort } from "../../mergeSort";
 
 export default function GridProducts({
     products,
@@ -8,7 +11,9 @@ export default function GridProducts({
     products: Product[];
     itemsPerPage: string;
 }) {
-    const ProductCardsArray = products?.map((product, index) => {
+    const { sortBy } = useContext(ShopContext);
+    const sortedProducts = mergeSort(products, sortBy);
+    const ProductCardsArray = sortedProducts?.map((product, index) => {
         if (index < Number(itemsPerPage)) {
             return <ProductCard key={index} product={product} />;
         }
