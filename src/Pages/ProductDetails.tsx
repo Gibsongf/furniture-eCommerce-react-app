@@ -18,39 +18,36 @@ const Image = ({ title, src }: { title: string; src: string }) => {
     );
 };
 // will receive 4 src img
-const SideImages = () => {
+const SideImages = ({ src }) => {
     // add selection for a change of image that is the focus
+    const [mainImg, setMainImg] = useState(0);
     return (
         <>
             <Stack direction={"column"} spacing={8} width={"15%"}>
-                <img
-                    style={{
-                        borderRadius: "10px",
-                        border: "solid 5px  #FFF3E3",
-                    }}
-                    srcSet={``}
-                    src={"../src/assets/Home/product-1.png"}
-                    alt={"product-1"}
-                    // onMouseEnter={{ border: "s5px black" }}
-                />
-                <img
-                    style={{ borderRadius: "10px" }}
-                    srcSet={``}
-                    src={"../src/assets/Home/product-1.png"}
-                    alt={"product-2"}
-                />
-                <img
-                    style={{ borderRadius: "10px" }}
-                    srcSet={``}
-                    src={"../src/assets/Home/product-1.png"}
-                    alt={"product-3"}
-                />
+                {src.map((url: string, index: number) => {
+                    return (
+                        <Box
+                            sx={{
+                                borderRadius: "10px",
+                                "&:hover": { border: "#B88E2F solid 3px" },
+                            }}
+                            component="img"
+                            src={url}
+                            alt={`product-${index}`}
+                            key={index}
+                            onClick={() => {
+                                setMainImg(index);
+                            }}
+                        />
+                    );
+                })}
             </Stack>
-            <img
-                style={{ borderRadius: "10px", width: "65%" }}
-                srcSet={``}
-                src={"../src/assets/Home/product-1.png"}
-                alt={"product-3"}
+
+            <Box
+                component="img"
+                src={src[mainImg]}
+                sx={{ borderRadius: "10px", width: "65%" }}
+                alt={"product-0"}
             />
         </>
     );
@@ -99,7 +96,7 @@ export function ProductDetails() {
                             alignItems: "flex-start",
                             gap: "50px",
                         }}>
-                        <SideImages />
+                        <SideImages src={selectProduct.src} />
                     </Grid>
                     <Grid item xs={5}>
                         <Information />

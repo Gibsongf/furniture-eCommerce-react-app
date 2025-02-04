@@ -1,4 +1,5 @@
 import { Product } from "./components/Products/ProductCard";
+import { allProducts } from "./ProductImgs";
 
 // products will need more info like side images and the current review of it
 
@@ -43,7 +44,8 @@ interface PageObj {
 export const pagination = (itemsPage: string) => {
     const pagesObj: PageObj = {};
     let page = 0;
-    moreProducts.forEach((obj) => {
+
+    allProducts.forEach((obj) => {
         let key = String(page);
         if (!pagesObj[key]) {
             pagesObj[key] = [obj];

@@ -75,7 +75,7 @@ export const CartProduct = ({ product }: { product: Product }) => {
                     gridColumn: "1",
                     borderRadius: "15px",
                 }}
-                src={src}
+                src={src[0]}
                 alt="title"
                 srcSet=""
             />

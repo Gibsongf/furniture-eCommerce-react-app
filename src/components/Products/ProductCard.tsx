@@ -8,7 +8,7 @@ import { CircleBadge } from "./CicleCardBadge";
 export interface Product {
     name: string;
     price: number;
-    src: string;
+    src: string[];
     description: string;
     quantity: number;
     preview?: string;
@@ -43,7 +43,7 @@ export function ProductCard({ product }: { product: Product }) {
             <ShopAddToCart show={showAddCart} product={product} />
             <CircleBadge isNew={newProduct} value={discount} />
 
-            <img style={{ width: "100%" }} src={src} alt="title" srcSet="" />
+            <img style={{ width: "100%" }} src={src[0]} alt="title" srcSet="" />
             <CardContent sx={{ textAlign: "left" }}>
                 <Typography fontWeight="bold" variant="h4" component="h1">
                     {name.replace(name[0], name[0].toUpperCase())}

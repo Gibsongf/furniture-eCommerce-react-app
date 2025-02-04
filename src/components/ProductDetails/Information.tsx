@@ -39,17 +39,8 @@ const DetailsAction = ({ product }: { product: Product }) => {
 };
 const Information = () => {
     // {name, value, overallRating, numsOfReview, description}
-    const storedProduct = localStorage.getItem("selected-product");
-    let detailsProduct = {
-        name: "null",
-        price: "null",
-        description: "null",
-    };
+    const { selectProduct } = useContext(ShoppingCartContext);
 
-    // Parse and assign only if storedProduct exists
-    if (storedProduct) {
-        detailsProduct = JSON.parse(storedProduct);
-    }
     return (
         <Box
             display="flex"
@@ -58,10 +49,10 @@ const Information = () => {
             gap="30px"
             width="100%">
             <Typography variant="h2" component="h1">
-                {detailsProduct.name}
+                {selectProduct.name}
             </Typography>
             <Typography color={"#9F9F9F"} variant="h4" component="h5">
-                {detailsProduct.price}
+                {selectProduct.price}
             </Typography>
             <Box display="flex" flexDirection="row" gap="10px">
                 <Rating
@@ -80,10 +71,10 @@ const Information = () => {
             </Box>
             <Box width="80%">
                 <Typography variant="subtitle1" component="h6">
-                    {detailsProduct.description}
+                    {selectProduct.description}
                 </Typography>
             </Box>
-            <DetailsAction product={detailsProduct} />
+            <DetailsAction product={selectProduct} />
         </Box>
     );
 };

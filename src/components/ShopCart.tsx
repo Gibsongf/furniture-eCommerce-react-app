@@ -6,7 +6,7 @@ type ProductState = {
 };
 const emptyProduct = {
     name: "",
-    src: "",
+    src: [],
     price: 0,
     description: "",
     quantity: 0,
