@@ -48,13 +48,13 @@ export const ContactInfo = () => {
             <Box sx={boxGrid}>
                 <LocationOnIcon sx={iconStyle} />
                 <Title text="Address" />
-                <Content text="236 5th SE Avenue, New York NY10000, United States" />
+                <Content text="23 Etiam rhoncusnisi. Nam eget dui" />
             </Box>
             <Box sx={boxGrid}>
                 <LocalPhoneIcon sx={iconStyle} />
                 <Title text="Phone" />
-                <Content text="Mobile: +(84) 546-6789" />
-                <Content row={3} text="Hotline: +(84) 546-6789" />
+                <Content text="Mobile: +(11) (11) 111-1111" />
+                <Content row={3} text="Hotline: +(11) 111-1111" />
             </Box>
             <Box sx={boxGrid}>
                 <AccessTimeFilledIcon sx={iconStyle} />

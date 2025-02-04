@@ -4,9 +4,18 @@ import { Product } from "./Products/ProductCard";
 type ProductState = {
     [key: string]: Product;
 };
+const emptyProduct = {
+    name: "",
+    src: "",
+    price: 0,
+    description: "",
+    quantity: 0,
+};
 
 export const useCart = () => {
     const [products, setProducts] = useState<ProductState>({});
+    const [selectProduct, setSelectProduct] = useState<Product>(emptyProduct);
+
     const [iconQuantity, setIconQuantity] = useState(0);
     const addProduct = (product: Product) => {
         setProducts((prev) => {
@@ -51,6 +60,8 @@ export const useCart = () => {
         iconQuantity,
         setIconQuantity,
         updateProduct,
+        selectProduct,
+        setSelectProduct,
     };
     //sum function that sum all product with their values quantity and apply discount
 };

@@ -6,7 +6,7 @@ import { PlaceOrder } from "./PlaceOrder";
 export const CheckOut = () => {
     return (
         <>
-            <ShopHeader />
+            <ShopHeader pageName="CheckOut" />
             <Grid container justifyContent="center" margin="60px 0px">
                 <Grid
                     item

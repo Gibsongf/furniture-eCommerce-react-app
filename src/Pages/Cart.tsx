@@ -6,7 +6,7 @@ export default function Cart() {
     return (
         <>
             {" "}
-            <ShopHeader />
+            <ShopHeader pageName="Cart" />
             <CartContent />
             <ServiceBenefits />
         </>

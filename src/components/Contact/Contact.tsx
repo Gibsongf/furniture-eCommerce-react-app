@@ -31,7 +31,7 @@ const HeaderMsg = () => {
 export const Contact = () => {
     return (
         <>
-            <ShopHeader />
+            <ShopHeader pageName="Contact" />
             <Box marginTop="50px" marginBottom="25px">
                 <Grid container justifyContent="center">
                     <Grid item xs={12}>

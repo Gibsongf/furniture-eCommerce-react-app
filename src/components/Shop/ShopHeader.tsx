@@ -4,7 +4,7 @@ import "../../../src/App.css";
 //Home > {Shop} this is called Breadcrumbs
 // A breadcrumbs is a list of links that help visualize a page's location within a site's
 //hierarchical structure, it allows navigation up to any of the ancestors.
-export const ShopHeader = () => {
+export const ShopHeader = ({ pageName }: { pageName: string }) => {
     return (
         <div
             className="header-shop"
@@ -27,7 +27,7 @@ export const ShopHeader = () => {
                 alignItems="center"
                 flexWrap={"wrap"}>
                 <Typography fontWeight="500" variant="h3" component="h1">
-                    Shop
+                    {pageName}
                 </Typography>
             </Box>
         </div>

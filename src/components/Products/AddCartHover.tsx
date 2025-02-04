@@ -34,12 +34,13 @@ export const ShopAddToCart = ({
     product: Product;
 }) => {
     // on click action to add to cart and update nums of product
-    const { addProduct } = useContext(ShoppingCartContext);
+    const { addProduct, setSelectProduct } = useContext(ShoppingCartContext);
     const addCart = () => {
         addProduct(product);
     };
     const saveProductInfo = () => {
         // save in browser
+        setSelectProduct(product);
         localStorage.setItem("selected-product", JSON.stringify(product));
     };
 

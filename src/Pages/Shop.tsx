@@ -37,7 +37,7 @@ export default function Shop() {
     return (
         <>
             {" "}
-            <ShopHeader />
+            <ShopHeader pageName="Shop" />
             {/* need filter or sort by and info of how many items is in the page */}
             {/* the sort event should happen at grid product only in the item at the current page*/}
             <ShopContext.Provider

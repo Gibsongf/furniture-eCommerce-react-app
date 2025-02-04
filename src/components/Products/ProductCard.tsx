@@ -10,8 +10,8 @@ export interface Product {
     price: number;
     src: string;
     description: string;
-    preview: string;
     quantity: number;
+    preview?: string;
     newProduct?: boolean;
     discount?: number;
     total?: number;

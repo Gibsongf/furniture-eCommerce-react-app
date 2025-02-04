@@ -43,7 +43,6 @@ export default function BasicTabs() {
                     onChange={handleChange}
                     aria-label="extra-info"
                     textColor="inherit"
-                    indicatorColor="null"
                     sx={{
                         "& .Mui-selected": {
                             fontWeight: "bold",
