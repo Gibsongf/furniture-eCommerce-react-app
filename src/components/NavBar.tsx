@@ -1,10 +1,12 @@
 import { Stack, Button, IconButton, Grid } from "@mui/material";
-import { Person2, ShoppingCart, Search } from "@mui/icons-material";
+import { ShoppingCart } from "@mui/icons-material";
 import { ThemeProvider } from "@mui/material";
 import { themeNav } from "./Theme";
 import SearchInput from "./Menu";
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../App";
 
 //when in mobile this nav is weird and use more than 100vw
 const Menu = () => {
@@ -28,6 +30,7 @@ const Menu = () => {
 };
 
 const IconMenu = () => {
+    const { iconQuantity } = useContext(ShoppingCartContext);
     return (
         <Stack
             direction="row"
@@ -41,6 +44,7 @@ const IconMenu = () => {
 
                     <ShoppingCart fontSize="large" sx={{ fill: "black" }} />
                 </IconButton>
+                {iconQuantity}
             </Link>
         </Stack>
     );

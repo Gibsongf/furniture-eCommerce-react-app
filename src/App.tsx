@@ -17,7 +17,7 @@ export const ShoppingCartContext = createContext<{
     removeProduct: (name: string) => void;
     updateProduct: (name: string, key: string, value: number | string) => void;
     iconQuantity: number;
-    selectProduct: Product | object;
+    selectProduct: Product;
     setSelectProduct: (product: Product) => void;
 }>({
     products: {}, // Provide an empty object as the default value for products
@@ -46,22 +46,24 @@ function App() {
     //remove context outlet and do a normal context is more easy than this for now
     return (
         <>
-            <Nav />
-            <Stack alignItems="center" padding="0px 100px" gap="30px">
-                <ScrollRestoration />
-                <ShoppingCartContext.Provider
-                    value={{
-                        addProduct,
-                        removeProduct,
-                        products,
-                        iconQuantity,
-                        updateProduct,
-                        selectProduct,
-                        setSelectProduct,
-                    }}>
+            <ShoppingCartContext.Provider
+                value={{
+                    addProduct,
+                    removeProduct,
+                    products,
+                    iconQuantity,
+                    updateProduct,
+                    selectProduct,
+                    setSelectProduct,
+                }}>
+                <Nav />
+                <Stack alignItems="center" padding="0px 100px" gap="30px">
+                    <ScrollRestoration />
+
                     <Outlet />
-                </ShoppingCartContext.Provider>
-            </Stack>
+                </Stack>
+            </ShoppingCartContext.Provider>
+
             <Footer />
         </>
     );

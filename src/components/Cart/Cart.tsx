@@ -62,7 +62,6 @@ export const CartContent = () => {
                     <Typography sx={headerStyle(5)}>Subtotal</Typography>
                     <Typography sx={headerStyle(6)}></Typography>
                 </Box>
-                {/* here a map with the product list  */}
                 <ProductInCart />
             </Grid>
             <Grid item xs={3}>

@@ -4,7 +4,7 @@ import { Product } from "./Products/ProductCard";
 type ProductState = {
     [key: string]: Product;
 };
-const emptyProduct = {
+const emptyProduct: Product = {
     name: "",
     src: [],
     price: 0,
@@ -26,6 +26,9 @@ export const useCart = () => {
                 ...prev,
                 [product.name]: product,
             }; // key is the product name, value is the Product object
+        });
+        setIconQuantity((prev) => {
+            return prev + 1;
         });
         // need to add total of current product?
         // if it has a discount we apply now ?
@@ -52,7 +55,11 @@ export const useCart = () => {
             delete products[name];
             return { ...products };
         });
+        setIconQuantity((prev) => {
+            return prev - 1;
+        });
     };
+
     return {
         addProduct,
         removeProduct,

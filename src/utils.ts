@@ -61,3 +61,11 @@ export const pagination = (itemsPage: string) => {
     });
     return pagesObj;
 };
+export const formattedValuesToUsd = (val: number) => {
+    return val.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    });
+};

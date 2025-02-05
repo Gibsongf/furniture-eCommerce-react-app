@@ -8,6 +8,7 @@ import {
 import { themeCheckOut } from "../Theme";
 import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
+import { formattedValuesToUsd } from "../../utils";
 
 export const CheckOutCard = () => {
     // props Subtotal, Total, discount
@@ -16,14 +17,6 @@ export const CheckOutCard = () => {
         (sum, product) => sum + product.price * (product.quantity || 1),
         0
     );
-    const formattedValues = (val: number) => {
-        return val.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD",
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        });
-    };
 
     const getTotal = () => {
         let total = 0;
@@ -33,10 +26,13 @@ export const CheckOutCard = () => {
                 const dis = dec * products[k].price;
                 const sub = products[k].price - dis;
                 total += sub * products[k].quantity;
+            } else {
+                total += products[k].price * products[k].quantity;
             }
         });
         return total;
     };
+
     return (
         <Box
             sx={{
@@ -65,7 +61,7 @@ export const CheckOutCard = () => {
                     color={"#9F9F9F"}
                     variant="subtitle1"
                     component="h2">
-                    {formattedValues(subtotal)}
+                    {formattedValuesToUsd(subtotal)}
                 </Typography>
             </Box>
             <Box
@@ -80,7 +76,7 @@ export const CheckOutCard = () => {
                     Total
                 </Typography>
                 <Typography color={"#B88E2F"} variant="h5" component="h2">
-                    {formattedValues(getTotal())}
+                    {formattedValuesToUsd(getTotal())}
                 </Typography>
             </Box>
             <ThemeProvider theme={themeCheckOut}>

@@ -11,13 +11,14 @@ import QuantityInput from "./QuantityInput";
 import { themeInformation } from "../Theme";
 import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
+import { formattedValuesToUsd } from "../../utils";
 
 const DetailsAction = ({ product }: { product: Product }) => {
-    const { addProduct } = useContext(ShoppingCartContext);
+    const { addProduct, selectProduct } = useContext(ShoppingCartContext);
     const [quantity, setQuantity] = useState(1);
     const onClickAdd = () => {
-        product.quantity = quantity;
-        addProduct(product);
+        selectProduct.quantity = quantity;
+        addProduct(selectProduct);
     };
     return (
         <Box
@@ -52,7 +53,7 @@ const Information = () => {
                 {selectProduct.name}
             </Typography>
             <Typography color={"#9F9F9F"} variant="h4" component="h5">
-                {selectProduct.price}
+                {formattedValuesToUsd(selectProduct.price)}
             </Typography>
             <Box display="flex" flexDirection="row" gap="10px">
                 <Rating

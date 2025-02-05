@@ -7,18 +7,8 @@ import GridProducts from "../components/Products/GridProducts";
 import { useContext, useEffect, useState } from "react";
 import { ShoppingCartContext } from "../App";
 
-const Image = ({ title, src }: { title: string; src: string }) => {
-    return (
-        <img
-            style={{ borderRadius: "10px" }}
-            srcSet={``}
-            src={src}
-            alt={title}
-        />
-    );
-};
 // will receive 4 src img
-const SideImages = ({ src }) => {
+const SideImages = ({ src }: { src: string[] }) => {
     // add selection for a change of image that is the focus
     const [mainImg, setMainImg] = useState(0);
     return (

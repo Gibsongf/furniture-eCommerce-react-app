@@ -1,7 +1,10 @@
 import { Box, Card, Divider, Rating, Typography } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../App";
 export const DescriptionDetails = () => {
     //receive the description
+    const { selectProduct } = useContext(ShoppingCartContext);
     return (
         <Box
             width={"80%"}
@@ -29,13 +32,13 @@ export const DescriptionDetails = () => {
             <Box display="flex" justifyContent="space-around">
                 <img
                     srcSet={``}
-                    src={"../src/assets/Home/product-1.png"}
+                    src={selectProduct.src[2]}
                     alt={"product-1"}
                     style={{ width: "490px", height: "305px" }}
                 />
                 <img
                     srcSet={``}
-                    src={"../src/assets/Home/product-1.png"}
+                    src={selectProduct.src[1]}
                     alt={"product-2"}
                     style={{ width: "490px", height: "305px" }}
                 />

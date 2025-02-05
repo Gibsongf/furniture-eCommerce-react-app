@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { ShopAddToCart } from "./AddCartHover";
 import { CircleBadge } from "./CicleCardBadge";
+import { formattedValuesToUsd } from "../../utils";
 
 export interface Product {
     name: string;
@@ -29,6 +30,7 @@ export function ProductCard({ product }: { product: Product }) {
         setShowAddCart(false);
     };
     const { name, price, src, preview, newProduct, discount } = product;
+
     return (
         <Card
             sx={{
@@ -52,7 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
                     {preview}
                 </Typography>
                 <Typography fontWeight="bold" variant="h5" component="h1">
-                    R${price}
+                    {formattedValuesToUsd(price)}
                 </Typography>
             </CardContent>
         </Card>
