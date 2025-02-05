@@ -64,7 +64,6 @@ export function ProductDetails() {
 
     return (
         <>
-            <DetailsHeader name={selectProduct.name} />
             <Box
                 display="flex"
                 flexDirection="column"
@@ -72,6 +71,8 @@ export function ProductDetails() {
                 alignItems="center"
                 gap="20px"
                 marginBottom="30px">
+                <DetailsHeader name={selectProduct.name} />
+
                 <Grid
                     container
                     justifyContent="space-evenly"

@@ -16,10 +16,8 @@ const getImgSrc = (
     discount?: number,
     newProduct?: boolean
 ) => {
-    let numImgs = 3;
-    if (itemName === "chair") {
-        numImgs--;
-    }
+    const numImgs = 2;
+
     const imgUrl = [];
     for (let n = 0; n <= numImgs; n++) {
         const url = `/${itemName}-${itemNum}-${n}.jpeg`;

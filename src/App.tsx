@@ -57,7 +57,7 @@ function App() {
                     setSelectProduct,
                 }}>
                 <Nav />
-                <Stack alignItems="center" padding="0px 100px" gap="30px">
+                <Stack alignItems="center" padding="0px 50px" gap="20px">
                     <ScrollRestoration />
 
                     <Outlet />
