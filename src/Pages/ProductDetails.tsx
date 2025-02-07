@@ -1,19 +1,24 @@
-import { Box, Divider, Grid, Stack, Typography } from "@mui/material";
-import DetailsHeader from "../components/ProductDetails/Header";
+import {
+    Box,
+    Divider,
+    Grid,
+    Stack,
+    Typography,
+    Breadcrumbs,
+} from "@mui/material";
 import Information from "../components/ProductDetails/Information";
 import BasicTabs from "../components/ProductDetails/TabInfo";
 import { pagination } from "../utils";
 import GridProducts from "../components/Products/GridProducts";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../App";
-
+import { Link } from "react-router-dom";
 // will receive 4 src img
-const SideImages = ({ src }: { src: string[] }) => {
-    // add selection for a change of image that is the focus
+const ProductImages = ({ src }: { src: string[] }) => {
     const [mainImg, setMainImg] = useState(0);
     return (
         <>
-            <Stack direction={"column"} spacing={8} width={"15%"}>
+            <Stack direction={"column"} spacing={8}>
                 {src.map((url: string, index: number) => {
                     return (
                         <Box
@@ -21,6 +26,7 @@ const SideImages = ({ src }: { src: string[] }) => {
                                 borderRadius: "10px",
                                 "&:hover": { border: "#B88E2F solid 3px" },
                             }}
+                            width={"50%"}
                             component="img"
                             src={url}
                             alt={`product-${index}`}
@@ -42,25 +48,27 @@ const SideImages = ({ src }: { src: string[] }) => {
         </>
     );
 };
-const getSelectedProduct = () => {
-    const storedProduct = localStorage.getItem("selected-product");
-    let detailsProduct = {
-        name: "null",
-        price: "null",
-        description: "null",
-    };
 
-    // Parse and assign only if storedProduct exists
-    if (storedProduct) {
-        detailsProduct = JSON.parse(storedProduct);
-    }
-    return detailsProduct;
+const DetailsHeader = ({ name }: { name: string }) => {
+    return (
+        <Breadcrumbs
+            sx={{
+                padding: "40px 0px",
+            }}
+            aria-label="breadcrumb">
+            <Link color="inherit" to="/">
+                Home
+            </Link>
+            <Link color="inherit" to="/shop">
+                Shop
+            </Link>
+            <Typography sx={{ color: "text.primary" }}>{name}</Typography>
+        </Breadcrumbs>
+    );
 };
 export function ProductDetails() {
     const product = pagination("4");
     const { selectProduct } = useContext(ShoppingCartContext);
-
-    // {img1, img2, img3, img4,resumedInfo?, full Info?}
 
     return (
         <>
@@ -69,25 +77,27 @@ export function ProductDetails() {
                 flexDirection="column"
                 justifyContent="center"
                 alignItems="center"
-                gap="20px"
-                marginBottom="30px">
-                <DetailsHeader name={selectProduct.name} />
-
+                rowGap="20px"
+                marginBottom="30px"
+                className="container-product-details"
+                width="90%">
                 <Grid
                     container
-                    justifyContent="space-evenly"
+                    justifyContent="space-between"
                     marginBottom="30px"
                     marginLeft="0">
+                    <Grid item xs={12}>
+                        <DetailsHeader name={selectProduct.name} />
+                    </Grid>
                     <Grid
                         item
-                        xs={5}
+                        xs={6}
                         sx={{
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "flex-start",
-                            gap: "50px",
                         }}>
-                        <SideImages src={selectProduct.src} />
+                        <ProductImages src={selectProduct.src} />
                     </Grid>
                     <Grid item xs={5}>
                         <Information />

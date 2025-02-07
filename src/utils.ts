@@ -69,3 +69,19 @@ export const formattedValuesToUsd = (val: number) => {
         maximumFractionDigits: 2,
     });
 };
+
+//get saved data on browser
+const getSelectedProduct = () => {
+    const storedProduct = localStorage.getItem("selected-product");
+    let detailsProduct = {
+        name: "null",
+        price: "null",
+        description: "null",
+    };
+
+    // Parse and assign only if storedProduct exists
+    if (storedProduct) {
+        detailsProduct = JSON.parse(storedProduct);
+    }
+    return detailsProduct;
+};
