@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Product } from "./components/Products/ProductCard";
 import { allProducts } from "./ProductImgs";
+import { ShoppingCartContext } from "./App";
 
 // products will need more info like side images and the current review of it
 
@@ -84,4 +86,31 @@ const getSelectedProduct = () => {
         detailsProduct = JSON.parse(storedProduct);
     }
     return detailsProduct;
+};
+
+export const useCartPrices = () => {
+    const { products } = useContext(ShoppingCartContext);
+    const subtotal = Object.values(products).reduce(
+        (sum, product) => sum + product.price * (product.quantity || 1),
+        0
+    );
+
+    const getTotal = () => {
+        let total = 0;
+        Object.keys(products).forEach((k) => {
+            if (products[k]?.discount) {
+                const dec = products[k].discount / 100;
+                const dis = dec * products[k].price;
+                const sub = products[k].price - dis;
+                total += sub * products[k].quantity;
+            } else {
+                total += products[k].price * products[k].quantity;
+            }
+        });
+        return total;
+    };
+    return {
+        subtotal: formattedValuesToUsd(subtotal),
+        total: formattedValuesToUsd(getTotal()),
+    };
 };

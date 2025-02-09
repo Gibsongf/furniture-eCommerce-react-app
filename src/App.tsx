@@ -6,7 +6,7 @@ import { Stack } from "@mui/material";
 // import { Contact } from "./components/Contact/Contact";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { createContext } from "react";
-import { useCart } from "./components/ShopCart";
+import { useCart } from "./components/useCart";
 import { Product } from "./components/Products/ProductCard";
 type ProductState = {
     [key: string]: Product;

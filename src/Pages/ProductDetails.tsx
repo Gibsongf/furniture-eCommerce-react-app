@@ -24,9 +24,10 @@ const ProductImages = ({ src }: { src: string[] }) => {
                         <Box
                             sx={{
                                 borderRadius: "10px",
-                                "&:hover": { border: "#B88E2F solid 3px" },
+                                border: "2px solid white",
+                                "&:hover": { border: "#B88E2F solid 2px" },
                             }}
-                            width={"50%"}
+                            width={"40%"}
                             component="img"
                             src={url}
                             alt={`product-${index}`}
@@ -42,7 +43,7 @@ const ProductImages = ({ src }: { src: string[] }) => {
             <Box
                 component="img"
                 src={src[mainImg]}
-                sx={{ borderRadius: "10px", width: "65%" }}
+                sx={{ borderRadius: "10px", width: "75%" }}
                 alt={"product-0"}
             />
         </>

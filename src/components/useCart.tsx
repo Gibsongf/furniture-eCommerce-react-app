@@ -51,12 +51,12 @@ export const useCart = () => {
         });
     };
     const removeProduct = (name: string) => {
+        setIconQuantity((prev) => {
+            return prev - 1;
+        });
         setProducts(() => {
             delete products[name];
             return { ...products };
-        });
-        setIconQuantity((prev) => {
-            return prev - 1;
         });
     };
 

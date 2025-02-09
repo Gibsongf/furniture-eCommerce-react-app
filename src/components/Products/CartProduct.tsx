@@ -4,6 +4,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { Product } from "./ProductCard";
 import { ChangeEvent, useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
+import { formattedValuesToUsd } from "../../utils";
 
 // export interface Product {
 //     name: string;
@@ -54,10 +55,11 @@ export const CartProduct = ({ product }: { product: Product }) => {
             const dec = discount / 100;
             const dis = dec * price;
             const sub = price - dis;
-            return sub * quantity;
+            return formattedValuesToUsd(sub * quantity);
         }
-        return price * quantity;
+        return formattedValuesToUsd(price * quantity);
     };
+
     return (
         <Box
             sx={{
@@ -92,7 +94,7 @@ export const CartProduct = ({ product }: { product: Product }) => {
                 fontWeight="bold"
                 color={"#9F9F9F"}
                 sx={productStyle(3)}>
-                {price}
+                {formattedValuesToUsd(price)}
             </Typography>
             <input
                 style={{

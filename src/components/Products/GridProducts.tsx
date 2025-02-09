@@ -23,7 +23,7 @@ export default function GridProducts({
             sx={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr));",
-                rowGap: "35px",
+                rowGap: "50px",
                 width: "90%",
                 justifyItems: "center",
             }}>
