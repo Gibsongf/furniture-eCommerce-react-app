@@ -18,10 +18,10 @@ export const useCart = () => {
 
     const [iconQuantity, setIconQuantity] = useState(0);
     const addProduct = (product: Product) => {
+        if (products[product.name]) {
+            return;
+        }
         setProducts((prev) => {
-            if (prev[product.name]) {
-                return { ...prev };
-            }
             return {
                 ...prev,
                 [product.name]: product,
@@ -30,8 +30,6 @@ export const useCart = () => {
         setIconQuantity((prev) => {
             return prev + 1;
         });
-        // need to add total of current product?
-        // if it has a discount we apply now ?
 
         return;
     };
@@ -51,6 +49,7 @@ export const useCart = () => {
         });
     };
     const removeProduct = (name: string) => {
+        if (!products[name]) return;
         setIconQuantity((prev) => {
             return prev - 1;
         });
