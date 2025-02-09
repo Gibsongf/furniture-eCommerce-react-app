@@ -25,7 +25,7 @@ const ShareSetup = () => {
                 Share your setup with
             </Typography>
             <Typography fontWeight={"bold"} variant="h3" component="h1">
-                #FuniroFurniture
+                #DictumFelis
             </Typography>
         </Box>
     );

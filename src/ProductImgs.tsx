@@ -1,14 +1,5 @@
 import { faker } from "@faker-js/faker";
 import { Product } from "./components/Products/ProductCard";
-// name: string;
-//     price: number;
-//     src: string;
-//     description: string;
-//     quantity: number;
-//     preview?: string;
-//     newProduct?: boolean;
-//     discount?: number;
-//     total?: number;
 
 const getImgSrc = (
     itemName: string,
@@ -39,13 +30,24 @@ const getImgSrc = (
     }
     return finalObj;
 };
-export const allProducts = [
-    getImgSrc("bed", 0, undefined, true),
-    getImgSrc("bed", 1, 10),
-    getImgSrc("chair", 0, undefined, true),
-    getImgSrc("chair", 1, 10),
-    getImgSrc("table", 0, undefined, true),
-    getImgSrc("table", 1, 10),
-    getImgSrc("sofa", 0, undefined, true),
-    getImgSrc("sofa", 1, 10),
+const repeat = [
+    ["bed", 0, undefined, true],
+    ["bed", 1, 5],
+    ["chair", 0, undefined, true],
+    ["chair", 1, 30],
+    ["table", 0, undefined, true],
+    ["table", 1, 20],
+    ["sofa", 0, undefined, true],
+    ["sofa", 1, 15],
 ];
+const moreProducts = () => {
+    const p: Product[] = [];
+    for (let i = 0; i <= 3; i++) {
+        repeat.forEach((arr, k) => {
+            p.push(getImgSrc(arr[0], arr[1], arr[2], arr[3]));
+        });
+    }
+    return p;
+};
+
+export const allProducts = moreProducts();
