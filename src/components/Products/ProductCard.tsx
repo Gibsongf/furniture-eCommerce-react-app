@@ -18,9 +18,6 @@ export interface Product {
     total?: number;
 }
 
-//a discount circle cor red with percentage of it
-//a new circle color
-
 export function ProductCard({ product }: { product: Product }) {
     const [showAddCart, setShowAddCart] = useState<boolean>(false);
     const onMouseEnter = () => {

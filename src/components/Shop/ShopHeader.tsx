@@ -1,9 +1,5 @@
-import { Button, Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "../../../src/App.css";
-// need to include this kind of stuff
-//Home > {Shop} this is called Breadcrumbs
-// A breadcrumbs is a list of links that help visualize a page's location within a site's
-//hierarchical structure, it allows navigation up to any of the ancestors.
 export const ShopHeader = ({ pageName }: { pageName: string }) => {
     return (
         <div

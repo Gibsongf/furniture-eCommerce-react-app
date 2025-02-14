@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Product, ProductCard } from "./ProductCard";
 import { Box } from "@mui/material";
 import { ShopContext } from "../../Pages/Shop";

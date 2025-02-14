@@ -25,7 +25,7 @@ export const ShoppingCartContext = createContext<{
     removeProduct: () => {},
     updateProduct: () => {},
     iconQuantity: 0,
-    selectProduct: {},
+    selectProduct: {} as Product,
     setSelectProduct: () => {},
 });
 function App() {
@@ -38,12 +38,6 @@ function App() {
         selectProduct,
         setSelectProduct,
     } = useCart();
-    //
-    //todo
-    //routes
-    // a object context cart
-    //side bar cart with items
-    //remove context outlet and do a normal context is more easy than this for now
     return (
         <>
             <ShoppingCartContext.Provider
@@ -59,7 +53,6 @@ function App() {
                 <Nav />
                 <Stack alignItems="center" padding="0px 50px" gap="20px">
                     <ScrollRestoration />
-
                     <Outlet />
                 </Stack>
             </ShoppingCartContext.Provider>

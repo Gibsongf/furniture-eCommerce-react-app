@@ -32,13 +32,11 @@ const ShareSetup = () => {
 };
 
 export default function Home() {
-    // api call to get product or just fake data
     const pagesObj = pagination("8");
 
     return (
         <>
             <Banner />
-            {/* <Stack alignItems="center" padding="100px"> */}
             <BrowseRange />
             <Categories />
             <Divider flexItem />
@@ -47,9 +45,7 @@ export default function Home() {
                 Our Products
             </Typography>
             <GridProducts products={pagesObj["0"]} itemsPerPage="8" />
-            {/* </Stack> */}
             <Divider flexItem />
-
             <ShareSetup />
             <ShareSetupImages />
         </>

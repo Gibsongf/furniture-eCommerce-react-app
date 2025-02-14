@@ -41,8 +41,6 @@ const moreProducts: Product[] = Array(32)
 interface PageObj {
     [key: string]: Product[];
 }
-// const [itemsPage, setItemPage] = useState("8");
-//obj with page num as key with the values being an array of Product[]
 export const pagination = (itemsPage: string) => {
     const pagesObj: PageObj = {};
     let page = 0;
@@ -72,7 +70,7 @@ export const formattedValuesToUsd = (val: number) => {
     });
 };
 
-//get saved data on browser
+//get saved localStorage  data
 const getSelectedProduct = () => {
     const storedProduct = localStorage.getItem("selected-product");
     let detailsProduct = {

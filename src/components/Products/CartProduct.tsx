@@ -1,22 +1,9 @@
 import { Box, Typography } from "@mui/material";
-// import { fakeProducts } from "../../utils";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Product } from "./ProductCard";
 import { ChangeEvent, useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
 import { formattedValuesToUsd } from "../../utils";
-
-// export interface Product {
-//     name: string;
-//     price: number;
-//     src: string;
-//     description: string;
-//     preview: string;
-//     quantity: number;
-//     newProduct?: boolean;
-//     discount?: string;
-//     total?: number;
-// }
 
 export const CartProduct = ({ product }: { product: Product }) => {
     const { name, src, price, quantity, discount } = product;

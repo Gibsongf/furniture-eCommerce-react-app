@@ -51,7 +51,6 @@ export default function BasicTabs() {
                     }}
                     centered>
                     <Tab label="Description" value={0} />
-                    {/* <Tab label="Additional Information" value={1} /> */}
                     <Tab label="Review[num reviews]" value={1} />
                 </Tabs>
             </Box>

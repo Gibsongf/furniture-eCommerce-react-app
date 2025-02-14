@@ -24,8 +24,6 @@ const theme = createTheme({
     },
 });
 
-type CallBackCart = (product: Product) => void;
-//shop button add to cart
 export const ShopAddToCart = ({
     show,
     product,
@@ -58,7 +56,6 @@ export const ShopAddToCart = ({
                 justifyContent: "center",
                 gap: "15px",
             }}>
-            {/*a onClick func to add to cart */}
             <ThemeProvider theme={theme}>
                 <Button
                     sx={{
@@ -73,7 +70,6 @@ export const ShopAddToCart = ({
                 <IconButton
                     aria-label="shopping-cart"
                     onClick={saveProductInfo}>
-                    {/* here the id of the product as url */}
                     <Link to={`/product/${product.name}`}>
                         <AddCircleOutlineIcon
                             fontSize="large"

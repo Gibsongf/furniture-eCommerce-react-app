@@ -13,7 +13,6 @@ import GridProducts from "../components/Products/GridProducts";
 import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../App";
 import { Link } from "react-router-dom";
-// will receive 4 src img
 const ProductImages = ({ src }: { src: string[] }) => {
     const [mainImg, setMainImg] = useState(0);
     return (

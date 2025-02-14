@@ -2,13 +2,14 @@ import { Stack, Button, IconButton, Grid } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { ThemeProvider } from "@mui/material";
 import { themeNav } from "./Theme";
-import SearchInput from "./Menu";
+// import SearchInput from "./Menu";
 import { Link } from "react-router-dom";
 import "../App.css";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../App";
+import Badge from "@mui/material/Badge";
+import { themePaletteColor } from "./Theme";
 
-//when in mobile this nav is weird and use more than 100vw
 const Menu = () => {
     return (
         <Stack
@@ -37,14 +38,18 @@ const IconMenu = () => {
             alignItems={"center"}
             justifyContent="space-evenly"
             flexWrap={"wrap"}>
-            <SearchInput />
+            {/* <SearchInput /> */}
             <Link to="cart">
-                <IconButton aria-label="shopping-cart">
-                    {/* change to mui badge */}
-
-                    <ShoppingCart fontSize="large" sx={{ fill: "black" }} />
-                </IconButton>
-                {iconQuantity}
+                <ThemeProvider theme={themePaletteColor}>
+                    <IconButton aria-label="shopping-cart">
+                        <Badge badgeContent={iconQuantity} color="primary">
+                            <ShoppingCart
+                                fontSize="large"
+                                sx={{ fill: "black" }}
+                            />
+                        </Badge>
+                    </IconButton>
+                </ThemeProvider>
             </Link>
         </Stack>
     );

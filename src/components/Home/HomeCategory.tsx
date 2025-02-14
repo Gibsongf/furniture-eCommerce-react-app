@@ -1,7 +1,5 @@
 import { Typography, ImageList, ImageListItem } from "@mui/material";
 
-//here on hover we can put a dark background color with opacity and
-//a button at the middle as link for that category
 const Image = ({ title, src }: { title: string; src: string }) => {
     return (
         <ImageListItem key={title}>

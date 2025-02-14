@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
-//#2EC1AC new
-//#E97171 promo
+
 interface CircleBadge {
     isNew: boolean | undefined;
     value: string | number | undefined;

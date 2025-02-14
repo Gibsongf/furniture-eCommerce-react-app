@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Product } from "./Products/ProductCard";
 // Specify the type for the state
 type ProductState = {

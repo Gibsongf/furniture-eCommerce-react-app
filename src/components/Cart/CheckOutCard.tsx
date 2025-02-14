@@ -1,18 +1,9 @@
-import {
-    Box,
-    Typography,
-    Button,
-    ThemeProvider,
-    createTheme,
-} from "@mui/material";
+import { Box, Typography, Button, ThemeProvider } from "@mui/material";
 import { themeCheckOut } from "../Theme";
-import { useContext, useState } from "react";
-import { ShoppingCartContext } from "../../App";
-import { formattedValuesToUsd, useCartPrices } from "../../utils";
+import { useCartPrices } from "../../utils";
 import { Link } from "react-router-dom";
 
 export const CheckOutCard = () => {
-    // props Subtotal, Total, discount
     const { subtotal, total } = useCartPrices();
     return (
         <Box

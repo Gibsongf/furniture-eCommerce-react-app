@@ -6,7 +6,7 @@ import { CheckOutCard } from "./CheckOutCard";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../App";
 
-// need to separate some components, we have to much stuffs in one place
+// need to separate some components, a lot stuffs in one place
 export const CartContent = () => {
     const { products } = useContext(ShoppingCartContext);
     const align: string[] = [

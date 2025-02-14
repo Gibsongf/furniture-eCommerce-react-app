@@ -26,7 +26,6 @@ const BoxProductNamePrice = ({
     );
 };
 export const PlaceOrder = () => {
-    // props Subtotal, Total, discount
     const { subtotal, total } = useCartPrices();
 
     const { products } = useContext(ShoppingCartContext);

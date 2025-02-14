@@ -6,14 +6,13 @@ import {
     ThemeProvider,
     Typography,
 } from "@mui/material";
-import { Product } from "../Products/ProductCard";
 import QuantityInput from "./QuantityInput";
 import { themeInformation } from "../Theme";
 import { useContext, useState } from "react";
 import { ShoppingCartContext } from "../../App";
 import { formattedValuesToUsd } from "../../utils";
 
-const DetailsAction = ({ product }: { product: Product }) => {
+const DetailsAction = () => {
     const { addProduct, selectProduct } = useContext(ShoppingCartContext);
     const [quantity, setQuantity] = useState(1);
     const onClickAdd = () => {
@@ -39,7 +38,6 @@ const DetailsAction = ({ product }: { product: Product }) => {
     );
 };
 const Information = () => {
-    // {name, value, overallRating, numsOfReview, description}
     const { selectProduct } = useContext(ShoppingCartContext);
 
     return (
@@ -75,7 +73,7 @@ const Information = () => {
                     {selectProduct.description}
                 </Typography>
             </Box>
-            <DetailsAction product={selectProduct} />
+            <DetailsAction />
         </Box>
     );
 };

@@ -1,4 +1,4 @@
-import { Divider, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { ShopHeader } from "../Shop/ShopHeader";
 import { FormBill } from "./FormBillInfo";
 import { PlaceOrder } from "./PlaceOrder";

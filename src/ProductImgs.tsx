@@ -30,7 +30,9 @@ const getImgSrc = (
     }
     return finalObj;
 };
-const repeat = [
+type ImageInfo = [string, number, number | undefined, boolean?];
+
+const repeat: ImageInfo[] = [
     ["bed", 0, undefined, true],
     ["bed", 1, 5],
     ["chair", 0, undefined, true],
@@ -43,7 +45,7 @@ const repeat = [
 const moreProducts = () => {
     const p: Product[] = [];
     for (let i = 0; i <= 3; i++) {
-        repeat.forEach((arr, k) => {
+        repeat.forEach((arr) => {
             p.push(getImgSrc(arr[0], arr[1], arr[2], arr[3]));
         });
     }

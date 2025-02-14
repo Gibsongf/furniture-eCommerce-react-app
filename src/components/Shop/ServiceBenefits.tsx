@@ -23,7 +23,6 @@ export const ServiceBenefits = () => {
                         fontWeight="bold"
                         variant="subtitle1"
                         component="h2">
-                        {/* High Quality */}
                         Nullam quis
                     </Typography>
                     <Typography
@@ -41,7 +40,6 @@ export const ServiceBenefits = () => {
                         fontWeight="bold"
                         variant="subtitle1"
                         component="h2">
-                        {/* Warranty Protection */}
                         Maecenas nec
                     </Typography>
                     <Typography
@@ -59,7 +57,6 @@ export const ServiceBenefits = () => {
                         fontWeight="bold"
                         variant="subtitle1"
                         component="h2">
-                        {/* Free Shipping */}
                         Aenean imperdiet
                     </Typography>
                     <Typography
@@ -77,7 +74,6 @@ export const ServiceBenefits = () => {
                         fontWeight="bold"
                         variant="subtitle1"
                         component="h2">
-                        {/* 24 / 7 Support */}
                         Etiam rhoncus
                     </Typography>
                     <Typography
