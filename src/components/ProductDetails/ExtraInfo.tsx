@@ -3,7 +3,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../App";
 export const DescriptionDetails = () => {
-    //receive the description
     const { selectProduct } = useContext(ShoppingCartContext);
     return (
         <Box
@@ -47,9 +46,7 @@ export const DescriptionDetails = () => {
     );
 };
 
-// const AdditionalInformation = () => {};
 const Review = () => {
-    //{username, userReview, dateReview,location?, reviewText}
     return (
         <Card sx={{ margin: "30px", padding: "1rem", textAlign: "left" }}>
             {" "}
