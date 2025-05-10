@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "/furniture-eCommerce-react-app/",
+    base: "/furniture-ecommerce-react-app/",
     plugins: [
         react(),
         viteStaticCopy({
