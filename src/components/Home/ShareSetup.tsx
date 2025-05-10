@@ -5,9 +5,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 export default function ShareSetupImages() {
     const imgSrc = Array(8)
         .fill(0)
-        .map(
-            (_n, index) => `src/assets/Home/ShareSetup/share-${index + 1}.png`
-        );
+        .map((_n, index) => `public/Home/ShareSetup/share-${index + 1}.png`);
     return (
         <Box
             sx={{

@@ -6,14 +6,14 @@
 .banner {
   width: 100%;
   height: 1000px;
-  background-image: url("src/assets/Home/banner-img2.jpg");
+  background-image: url("public/Home/banner-img2.jpg");
   background-size: cover;
 }
 
 .header-shop {
   width: 100%;
   height: 300px;
-  background-image: url("src/assets/Shop/shop-header.jpeg");
+  background-image: url("public/Shop/shop-header.jpeg");
   background-size: cover;
   background-position: center;
 
