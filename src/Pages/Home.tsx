@@ -1,4 +1,4 @@
-import { Typography, Box, Stack, Divider } from "@mui/material";
+import { Typography, Box, Divider } from "@mui/material";
 import { Banner } from "../components/Home/Banner";
 import { Categories } from "../components/Home/HomeCategory";
 import GridProducts from "../components/Products/GridProducts";

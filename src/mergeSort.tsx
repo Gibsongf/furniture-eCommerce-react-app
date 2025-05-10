@@ -13,24 +13,25 @@ export function mergeSort(arr: Product[], order: string): Product[] {
     return mergeArr(mergeSort(right, order), mergeSort(left, order), order);
 }
 function mergeArr(l: Product[], r: Product[], order: string): Product[] {
-    const merge = [];
+    const merge: Product[] = [];
     const lgth = r.length + l.length;
     while (lgth != merge.length) {
         if (!r[0]) {
-            merge.push(l.shift());
+            merge.push(l.shift()!);
         } else if (order === "descending") {
             if (l[0]?.price >= r[0]?.price || l[0] === undefined) {
-                merge.push(r.shift());
+                merge.push(r.shift()!);
             } else {
-                merge.push(l.shift());
+                merge.push(l.shift()!);
             }
         } else {
             if (l[0]?.price <= r[0]?.price || l[0] === undefined) {
-                merge.push(r.shift());
+                merge.push(r.shift()!);
             } else {
-                merge.push(l.shift());
+                merge.push(l.shift()!);
             }
         }
     }
+
     return merge;
 }

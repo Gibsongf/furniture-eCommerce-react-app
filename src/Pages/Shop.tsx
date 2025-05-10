@@ -30,7 +30,10 @@ export default function Shop() {
         setPage(1);
     };
     const pagesObj = pagination(itemsPerPage);
-    const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    const handleChange = (
+        _event: React.ChangeEvent<unknown>,
+        value: number
+    ) => {
         setPage(value);
         ProductViewAdjusterRef.current?.scrollIntoView({ behavior: "smooth" });
     };

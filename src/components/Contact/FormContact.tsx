@@ -18,14 +18,15 @@ export function FormContact() {
                 <TextField label="Subject" />
                 <TextField label="Message" multiline rows={4} />
             </ThemeProvider>
-            {/* <ThemeProvider theme={themeBanner}>
+            <ThemeProvider theme={themeBanner}>
                 <Button
                     className="submit-contact"
                     sx={{ padding: "6px 8px" }}
-                    variant="text">
+                    variant="text"
+                    disabled>
                     Submit
                 </Button>
-            </ThemeProvider> */}
+            </ThemeProvider>
         </Box>
     );
 }

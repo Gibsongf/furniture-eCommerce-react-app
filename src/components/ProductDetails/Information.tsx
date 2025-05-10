@@ -30,7 +30,7 @@ const DetailsAction = () => {
             <QuantityInput quantity={quantity} setQuantity={setQuantity} />
 
             <ThemeProvider theme={themeInformation}>
-                <Button onClick={onClickAdd} variant="outlined" type="text">
+                <Button onClick={onClickAdd} variant="outlined">
                     Add To Cart
                 </Button>
             </ThemeProvider>

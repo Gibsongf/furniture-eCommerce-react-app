@@ -44,8 +44,15 @@ export default function QuantityInput({
     quantity: number;
     setQuantity: (val: number) => void;
 }) {
-    const onChange = (event, val) => {
-        setQuantity(val);
+    const onChange = (
+        _event: React.ChangeEvent<unknown>,
+        val: number | null
+    ) => {
+        if (val != null) {
+            setQuantity(val);
+        } else {
+            setQuantity(1);
+        }
     };
     return (
         <Box
@@ -65,16 +72,16 @@ export default function QuantityInput({
     );
 }
 
-const blue = {
-    100: "#daecff",
-    200: "#b6daff",
-    300: "#66b2ff",
-    400: "#3399ff",
-    500: "#007fff",
-    600: "#0072e5",
-    700: "#0059B2",
-    800: "#004c99",
-};
+// const blue = {
+//     100: "#daecff",
+//     200: "#b6daff",
+//     300: "#66b2ff",
+//     400: "#3399ff",
+//     500: "#007fff",
+//     600: "#0072e5",
+//     700: "#0059B2",
+//     800: "#004c99",
+// };
 
 const grey = {
     50: "#F3F6F9",
@@ -102,7 +109,7 @@ const StyledInputRoot = styled("div")(
 );
 
 const StyledInput = styled("input")(
-    ({ theme }) => `
+    () => `
   font-size: 0.875rem;
   font-family: inherit;
   font-weight: 400;
@@ -125,7 +132,7 @@ const StyledInput = styled("input")(
 );
 
 const StyledButton = styled("button")(
-    ({ theme }) => `
+    () => `
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;
