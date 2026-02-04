@@ -13,9 +13,9 @@ import { themePaletteColor } from "./Theme";
 const Menu = () => {
   return (
     <Stack
+      gap={"30px"}
       justifyContent={"center"}
       direction="row"
-      spacing={6}
       flexWrap={"wrap"}>
       <Link to="/">
         <Button variant="text">Home</Button>
@@ -33,11 +33,7 @@ const Menu = () => {
 const IconMenu = () => {
   const { iconQuantity } = useContext(ShoppingCartContext);
   return (
-    <Stack
-      direction="row"
-      alignItems={"center"}
-      justifyContent="space-evenly"
-      flexWrap={"wrap"}>
+    <Stack direction="row" alignItems={"center"} flexWrap={"wrap"}>
       <Link to="cart">
         <ThemeProvider theme={themePaletteColor}>
           <IconButton aria-label="shopping-cart">
@@ -51,28 +47,19 @@ const IconMenu = () => {
   );
 };
 export const Nav = () => {
+  const style = {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
   return (
     <ThemeProvider theme={themeNav}>
-      <Box maxWidth={"1200px"} margin={"0 auto"}>
-        <Grid
-          sx={{
-            margin: "0",
-            fontWeight: "bold",
-            "& .MuiGrid-item": { padding: "0" },
-          }}
-          container
-          spacing={3}
-          alignItems={"center"}>
-          <Grid item xs>
-            <Button variant="text">LOGO</Button>
-          </Grid>
-          <Grid item xs={5}>
-            <Menu />
-          </Grid>
-          <Grid item xs>
-            <IconMenu />
-          </Grid>
-        </Grid>
+      <Box sx={style}>
+        <Button variant="text">LOGO</Button>
+        <Menu />
+        <IconMenu />
       </Box>
     </ThemeProvider>
   );
