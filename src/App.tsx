@@ -9,57 +9,57 @@ import { createContext } from "react";
 import { useCart } from "./components/useCart";
 import { Product } from "./components/Products/ProductCard";
 type ProductState = {
-    [key: string]: Product;
+  [key: string]: Product;
 };
 export const ShoppingCartContext = createContext<{
-    products: ProductState;
-    addProduct: (product: Product) => void;
-    removeProduct: (name: string) => void;
-    updateProduct: (name: string, key: string, value: number | string) => void;
-    iconQuantity: number;
-    selectProduct: Product;
-    setSelectProduct: (product: Product) => void;
+  products: ProductState;
+  addProduct: (product: Product) => void;
+  removeProduct: (name: string) => void;
+  updateProduct: (name: string, key: string, value: number | string) => void;
+  iconQuantity: number;
+  selectProduct: Product;
+  setSelectProduct: (product: Product) => void;
 }>({
-    products: {}, // Provide an empty object as the default value for products
-    addProduct: () => {},
-    removeProduct: () => {},
-    updateProduct: () => {},
-    iconQuantity: 0,
-    selectProduct: {} as Product,
-    setSelectProduct: () => {},
+  products: {}, // Provide an empty object as the default value for products
+  addProduct: () => {},
+  removeProduct: () => {},
+  updateProduct: () => {},
+  iconQuantity: 0,
+  selectProduct: {} as Product,
+  setSelectProduct: () => {},
 });
 function App() {
-    const {
-        addProduct,
-        removeProduct,
-        products,
-        iconQuantity,
-        updateProduct,
-        selectProduct,
-        setSelectProduct,
-    } = useCart();
-    return (
-        <>
-            <ShoppingCartContext.Provider
-                value={{
-                    addProduct,
-                    removeProduct,
-                    products,
-                    iconQuantity,
-                    updateProduct,
-                    selectProduct,
-                    setSelectProduct,
-                }}>
-                <Nav />
-                <Stack alignItems="center" padding="0px 50px" gap="20px">
+  const {
+    addProduct,
+    removeProduct,
+    products,
+    iconQuantity,
+    updateProduct,
+    selectProduct,
+    setSelectProduct,
+  } = useCart();
+  return (
+    <>
+      <ShoppingCartContext.Provider
+        value={{
+          addProduct,
+          removeProduct,
+          products,
+          iconQuantity,
+          updateProduct,
+          selectProduct,
+          setSelectProduct,
+        }}>
+        <Nav />
+        {/* <Stack alignItems="center" padding="0px 50px" gap="20px">
                     <ScrollRestoration />
                     <Outlet />
-                </Stack>
-            </ShoppingCartContext.Provider>
+                </Stack> */}
+      </ShoppingCartContext.Provider>
 
-            <Footer />
-        </>
-    );
+      <Footer />
+    </>
+  );
 }
 
 export default App;
