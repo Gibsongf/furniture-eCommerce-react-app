@@ -51,10 +51,10 @@ function App() {
           setSelectProduct,
         }}>
         <Nav />
-        {/* <Stack alignItems="center" padding="0px 50px" gap="20px">
-                    <ScrollRestoration />
-                    <Outlet />
-                </Stack> */}
+        {/* <Stack alignItems="center" padding="0px 50px" gap="20px"> */}
+        <ScrollRestoration />
+        <Outlet />
+        {/* </Stack> */}
       </ShoppingCartContext.Provider>
 
       <Footer />
