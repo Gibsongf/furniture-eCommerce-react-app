@@ -14,16 +14,18 @@ export const Footer = () => {
       <Divider />
 
       <Box
+        className="footer-container"
         sx={{
+          maxWidth: "1200px",
+          margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr);",
-          minHeight: "300px",
+          gridTemplateColumns: "1fr 1fr 1fr",
           padding: "40px 75px 40px 75px",
           justifyItems: "center",
           textAlign: "left",
           gap: "5px",
         }}>
-        <Box sx={style}>
+        <Box className="footer-hide" sx={style}>
           <Typography fontWeight={"bold"} variant="h5" component="h1">
             Curabitur ullamcorpe
           </Typography>

@@ -72,7 +72,7 @@ a:visited {
   }
 
   .product-card h1 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .product-card h2 {
@@ -88,6 +88,10 @@ a:visited {
   .card-discount h4 {
     font-size: 1rem;
   }
+
+  .footer-container.MuiBox-root {
+    padding: 20px 45px 20px 45px;
+  }
 }
 
 @media (max-width:600px) {
@@ -102,6 +106,14 @@ a:visited {
   }
 
   .new-arrival-container .new-arrival-description {
+    display: none;
+  }
+
+  .footer-container.MuiBox-root {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-hide.MuiBox-root {
     display: none;
   }
 }
