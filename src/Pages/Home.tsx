@@ -41,6 +41,7 @@ export default function Home() {
       <Divider flexItem />
 
       <Typography
+        className="home-our-product"
         sx={{
           maxWidth: "1200px",
           textAlign: "center",

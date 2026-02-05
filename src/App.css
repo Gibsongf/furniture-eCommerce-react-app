@@ -66,6 +66,28 @@ a:visited {
     font-size: 0.8rem;
   }
 
+  .MuiTypography-root.home-our-product {
+    font-size: 1.7rem;
+
+  }
+
+  .product-card h1 {
+    font-size: 1.2rem;
+  }
+
+  .product-card h2 {
+    font-size: 1rem;
+  }
+
+  .card-discount.MuiBox-root {
+    width: 38px;
+    height: 38px;
+
+  }
+
+  .card-discount h4 {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width:600px) {

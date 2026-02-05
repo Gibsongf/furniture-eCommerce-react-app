@@ -30,9 +30,10 @@ export function ProductCard({ product }: { product: Product }) {
   const style = { maxWidth: "100%", height: "auto", display: "block" };
   return (
     <Card
+      className="product-card"
       sx={{
         backgroundColor: "#F4F5F7",
-        borderRadius: "0px",
+        borderRadius: "5px",
         position: "relative",
       }}
       onMouseEnter={onMouseEnter}

@@ -17,6 +17,7 @@ export const CircleBadge = ({ isNew, value }: CircleBadge) => {
     //     justifyContent="flex-end"
     //     sx={{ width: "100%", zIndex: "1", position: "relative" }}>
     <Box
+      className="card-discount"
       display="flex"
       alignItems="center"
       justifyContent=" center"
@@ -26,7 +27,7 @@ export const CircleBadge = ({ isNew, value }: CircleBadge) => {
         backgroundColor: color,
         position: "absolute",
         zIndex: "1",
-        borderRadius: "50px",
+        borderRadius: "50%",
         margin: "15px",
         padding: "3px",
         color: "white",
