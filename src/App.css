@@ -4,6 +4,7 @@
 }
 
 .banner {
+  padding: 140px;
   background-image: url("/Home/banner-img2.jpg");
   background-size: cover;
   background-position: bottom;
@@ -32,4 +33,33 @@ a:visited {
 #cart-item-quantity:focus-visible {
   outline: none;
   border: 1px solid #B88E2F;
+}
+
+@media (max-width:800px) {
+  .banner {
+    padding: 80px;
+  }
+
+  .new-arrival-container .new-arrival-description {
+    width: auto;
+  }
+
+  .new-arrival-container h1 {
+    font-size: 3rem;
+  }
+
+  .new-arrival-container h2 h3 {
+    font-size: 0.8rem;
+  }
+
+}
+
+@media (max-width:600px) {
+  .new-arrival-container h1 {
+    font-size: 1rem;
+  }
+
+  .new-arrival-container .new-arrival-description {
+    display: none;
+  }
 }

@@ -4,6 +4,7 @@ import { themeBanner } from "../Theme";
 const NewArrival = () => {
   return (
     <Box
+      className="new-arrival-container"
       sx={{
         backgroundColor: "#FFF3E3",
         textAlign: "left",
@@ -24,6 +25,7 @@ const NewArrival = () => {
       </Typography>
       <Typography
         width={"45ch"}
+        className="new-arrival-description"
         fontWeight={"bold"}
         variant="h6"
         component="h3">
@@ -38,11 +40,7 @@ const NewArrival = () => {
 };
 export const Banner = () => {
   return (
-    <div
-      className="banner"
-      style={{
-        padding: "140px",
-      }}>
+    <div className="banner">
       <NewArrival />
     </div>
   );

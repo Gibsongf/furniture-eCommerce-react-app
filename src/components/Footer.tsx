@@ -69,6 +69,7 @@ export const Footer = () => {
             </Typography>
           ))}
         </Box>
+        {/* removed col4 in 800px */}
         {/* <Box className="col4">Newsletter</Box> */}
       </Box>
     </>
