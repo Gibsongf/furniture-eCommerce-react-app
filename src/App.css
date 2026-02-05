@@ -40,6 +40,20 @@ a:visited {
     padding: 80px;
   }
 
+  .home-category.container {
+    gap: 30px;
+    /* overflow-y: hidden; */
+    /* -webkit-overflow-scrolling: touch; */
+  }
+
+  .home.browse-range h2 {
+    font-size: 1.1rem;
+  }
+
+  .home.browse-range h3 {
+    font-size: 0.9rem;
+  }
+
   .new-arrival-container .new-arrival-description {
     width: auto;
   }
@@ -57,6 +71,12 @@ a:visited {
 @media (max-width:600px) {
   .new-arrival-container h1 {
     font-size: 1rem;
+  }
+
+  .home-category.container {
+    gap: 20px;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   .new-arrival-container .new-arrival-description {
