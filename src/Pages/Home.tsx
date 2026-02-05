@@ -7,7 +7,7 @@ import { pagination } from "../utils";
 
 const BrowseRange = () => {
   return (
-    <Box className="home browse-range">
+    <Box sx={{ paddingTop: "40px" }} className="home browse-range">
       <Typography fontWeight="bold" variant="h5" component="h2">
         Browse The Range
       </Typography>
@@ -40,7 +40,15 @@ export default function Home() {
       <Categories />
       <Divider flexItem />
 
-      <Typography fontWeight={"bold"} variant="h4" component="h1">
+      <Typography
+        sx={{
+          maxWidth: "1200px",
+          textAlign: "center",
+          margin: "30px auto",
+        }}
+        fontWeight={"bold"}
+        variant="h4"
+        component="h1">
         Our Products
       </Typography>
       <GridProducts products={pagesObj["0"]} itemsPerPage="8" />

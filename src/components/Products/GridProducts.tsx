@@ -5,29 +5,32 @@ import { ShopContext } from "../../Pages/Shop";
 import { mergeSort } from "../../mergeSort";
 
 export default function GridProducts({
-    products,
-    itemsPerPage,
+  products,
+  itemsPerPage,
 }: {
-    products: Product[];
-    itemsPerPage: string;
+  products: Product[];
+  itemsPerPage: string;
 }) {
-    const { sortBy } = useContext(ShopContext);
-    const sortedProducts = mergeSort(products, sortBy);
-    const ProductCardsArray = sortedProducts?.map((product, index) => {
-        if (index < Number(itemsPerPage)) {
-            return <ProductCard key={index} product={product} />;
-        }
-    });
-    return (
-        <Box
-            sx={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr));",
-                rowGap: "50px",
-                width: "90%",
-                justifyItems: "center",
-            }}>
-            {ProductCardsArray}
-        </Box>
-    );
+  const { sortBy } = useContext(ShopContext);
+  const sortedProducts = mergeSort(products, sortBy);
+  const ProductCardsArray = sortedProducts?.map((product, index) => {
+    if (index < Number(itemsPerPage)) {
+      return <ProductCard key={index} product={product} />;
+    }
+  });
+  return (
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr));",
+        gap: "40px",
+        maxWidth: "1200px",
+        padding: "20px",
+
+        margin: "0 auto",
+        justifyItems: "center",
+      }}>
+      {ProductCardsArray}
+    </Box>
+  );
 }
