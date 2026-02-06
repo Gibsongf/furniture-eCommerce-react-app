@@ -48,7 +48,7 @@ export default function Shop() {
           sortBy,
           setSortBy,
         }}>
-        {/* <ProductViewAdjuster /> */}
+        <ProductViewAdjuster />
         <GridProducts
           itemsPerPage={itemsPerPage}
           products={pagesObj[String(page - 1)]}
