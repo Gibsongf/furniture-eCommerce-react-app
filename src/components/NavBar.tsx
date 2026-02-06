@@ -57,10 +57,12 @@ export const Nav = () => {
   };
   return (
     <ThemeProvider theme={themeNav}>
-      <Box sx={style}>
-        <Button variant="text">LOGO</Button>
-        <Menu />
-        <IconMenu />
+      <Box sx={{ backgroundColor: "#fdf3e6d6" }}>
+        <Box sx={style}>
+          <Button variant="text">LOGO</Button>
+          <Menu />
+          <IconMenu />
+        </Box>
       </Box>
     </ThemeProvider>
   );

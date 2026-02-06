@@ -70,7 +70,7 @@ export default function Shop() {
           color="primary"
         />
       </ThemeProvider>
-      {/* <ServiceBenefits /> */}
+      <ServiceBenefits />
     </>
   );
 }

@@ -12,11 +12,9 @@
 }
 
 .header-shop.MuiBox-root {
-  /* height: 300px; */
   background-image: linear-gradient(#ffffff6c, #ffffff5e), url("/Shop/shop-header.jpg");
   background-size: cover;
   background-position: center;
-  /* background-color: #9F9F9F; */
 }
 
 a,
