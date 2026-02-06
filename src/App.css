@@ -89,6 +89,18 @@ a:visited {
   .footer-container.MuiBox-root {
     padding: 20px 45px 20px 45px;
   }
+
+  /* Shop */
+  .benefit-container.MuiBox-root {
+    flex-direction: column;
+  }
+
+  .benefit-container.MuiBox-root h2 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+
 }
 
 @media (max-width:600px) {
@@ -111,6 +123,18 @@ a:visited {
   }
 
   .footer-hide.MuiBox-root {
+    display: none;
+  }
+
+  /* Shop */
+  .benefit-container.MuiBox-root.hide-benefit {
+    display: none;
+  }
+}
+
+
+@media (max-width:600px) {
+  .benefit-container.MuiBox-root.hide-benefit+div {
     display: none;
   }
 }
