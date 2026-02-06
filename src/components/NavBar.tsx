@@ -1,4 +1,4 @@
-import { Stack, Button, IconButton, Grid, Box } from "@mui/material";
+import { Stack, Button, IconButton, Box } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import { ThemeProvider } from "@mui/material";
 import { themeNav } from "./Theme";
@@ -53,6 +53,7 @@ export const Nav = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    padding: "0 20px",
   };
   return (
     <ThemeProvider theme={themeNav}>
