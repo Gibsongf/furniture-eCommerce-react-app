@@ -84,7 +84,7 @@ export const themeInformation = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          fontSize: "1.5rem",
+          fontSize: "1.3rem",
           border: "solid black 1px",
           borderRadius: "15px",
           textTransform: "none",
@@ -93,7 +93,7 @@ export const themeInformation = createTheme({
             backgroundColor: "#fff3e34a",
             borderColor: primaryColor,
           },
-          padding: "10px 45px 10px 45px",
+          padding: "5px 30px 5px 30px",
         },
       },
     },

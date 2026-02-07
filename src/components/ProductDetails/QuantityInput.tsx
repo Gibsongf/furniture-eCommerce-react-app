@@ -1,7 +1,7 @@
 import * as React from "react";
 import {
-    Unstable_NumberInput as BaseNumberInput,
-    NumberInputProps,
+  Unstable_NumberInput as BaseNumberInput,
+  NumberInputProps,
 } from "@mui/base/Unstable_NumberInput";
 import { styled } from "@mui/system";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -9,67 +9,65 @@ import AddIcon from "@mui/icons-material/Add";
 import { Box } from "@mui/material";
 
 const NumberInput = React.forwardRef(function CustomNumberInput(
-    props: NumberInputProps,
-    ref: React.ForwardedRef<HTMLDivElement>
+  props: NumberInputProps,
+  ref: React.ForwardedRef<HTMLDivElement>,
 ) {
-    return (
-        <BaseNumberInput
-            // onChange={onChange}
-            slots={{
-                root: StyledInputRoot,
-                input: StyledInput,
-                incrementButton: StyledButton,
-                decrementButton: StyledButton,
-            }}
-            slotProps={{
-                incrementButton: {
-                    children: <AddIcon fontSize="small" />,
-                    className: "increment",
-                },
-                decrementButton: {
-                    children: <RemoveIcon fontSize="small" />,
-                },
-            }}
-            {...props}
-            ref={ref}
-        />
-    );
+  return (
+    <BaseNumberInput
+      // onChange={onChange}
+      slots={{
+        root: StyledInputRoot,
+        input: StyledInput,
+        incrementButton: StyledButton,
+        decrementButton: StyledButton,
+      }}
+      slotProps={{
+        incrementButton: {
+          children: <AddIcon fontSize="small" />,
+          className: "increment",
+        },
+        decrementButton: {
+          children: <RemoveIcon fontSize="small" />,
+        },
+      }}
+      {...props}
+      ref={ref}
+    />
+  );
 });
 
 //need to link this val quantity to the product when add to cart is clicked
 export default function QuantityInput({
-    quantity,
-    setQuantity,
+  quantity,
+  setQuantity,
 }: {
-    quantity: number;
-    setQuantity: (val: number) => void;
+  quantity: number;
+  setQuantity: (val: number) => void;
 }) {
-    const onChange = (
-        _event: React.ChangeEvent<unknown>,
-        val: number | null
-    ) => {
-        if (val != null) {
-            setQuantity(val);
-        } else {
-            setQuantity(1);
-        }
-    };
-    return (
-        <Box
-            sx={{
-                border: "black 1px solid",
-                borderRadius: "20px",
-                padding: "5px",
-            }}>
-            <NumberInput
-                onChange={onChange}
-                aria-label="Quantity Input"
-                min={1}
-                max={10}
-                value={quantity}
-            />
-        </Box>
-    );
+  const onChange = (_event: React.ChangeEvent<unknown>, val: number | null) => {
+    if (val != null) {
+      setQuantity(val);
+    } else {
+      setQuantity(1);
+    }
+  };
+  return (
+    <Box
+      sx={{
+        border: "black 1px solid",
+        borderRadius: "20px",
+        padding: "2px",
+      }}>
+      <NumberInput
+        style={{ maxHeight: "35px" }}
+        onChange={onChange}
+        aria-label="Quantity Input"
+        min={1}
+        max={10}
+        value={quantity}
+      />
+    </Box>
+  );
 }
 
 // const blue = {
@@ -84,20 +82,20 @@ export default function QuantityInput({
 // };
 
 const grey = {
-    50: "#F3F6F9",
-    100: "#E5EAF2",
-    200: "#DAE2ED",
-    300: "#C7D0DD",
-    400: "#B0B8C4",
-    500: "#9DA8B7",
-    600: "#6B7A90",
-    700: "#434D5B",
-    800: "#303740",
-    900: "#1C2025",
+  50: "#F3F6F9",
+  100: "#E5EAF2",
+  200: "#DAE2ED",
+  300: "#C7D0DD",
+  400: "#B0B8C4",
+  500: "#9DA8B7",
+  600: "#6B7A90",
+  700: "#434D5B",
+  800: "#303740",
+  900: "#1C2025",
 };
 
 const StyledInputRoot = styled("div")(
-    ({ theme }) => `
+  ({ theme }) => `
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   color: ${theme.palette.mode === "dark" ? grey[300] : grey[500]};
@@ -105,11 +103,11 @@ const StyledInputRoot = styled("div")(
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-`
+`,
 );
 
 const StyledInput = styled("input")(
-    () => `
+  () => `
   font-size: 0.875rem;
   font-family: inherit;
   font-weight: 400;
@@ -128,11 +126,11 @@ const StyledInput = styled("input")(
   &:focus-visible {
     outline: 0;
   }
-`
+`,
 );
 
 const StyledButton = styled("button")(
-    () => `
+  () => `
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 0.875rem;
   box-sizing: border-box;
@@ -162,5 +160,5 @@ const StyledButton = styled("button")(
   &.increment {
     order: 1;
   }
-`
+`,
 );

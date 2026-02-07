@@ -32,15 +32,23 @@ a:visited {
   border: 1px solid #B88E2F;
 }
 
-@media (max-width:800px) {
+.product-buttons.container>div {
+  padding: 5px 0;
+}
+
+.MuiTabs-indicator.css-1aquho2-MuiTabs-indicator {
+  background-color: #B88E2F;
+}
+
+@media (max-width:900px) {
+
+  /* Home */
   .banner {
     padding: 80px;
   }
 
   .home-category.container {
     gap: 30px;
-    /* overflow-y: hidden; */
-    /* -webkit-overflow-scrolling: touch; */
   }
 
   .home.browse-range h2 {
@@ -68,6 +76,7 @@ a:visited {
 
   }
 
+  /* Product container */
   .product-card h1 {
     font-size: 1.4rem;
   }
@@ -86,8 +95,14 @@ a:visited {
     font-size: 1rem;
   }
 
+  /* Footer */
   .footer-container.MuiBox-root {
-    padding: 20px 45px 20px 45px;
+    padding: 20px;
+  }
+
+  .footer-container>.MuiBox-root {
+    align-items: center;
+
   }
 
   /* Shop */
@@ -100,8 +115,44 @@ a:visited {
     text-align: center;
   }
 
+  /* Product Detail */
+  /* title */
+  .product-content.container {
+    gap: 10px;
+  }
 
+  .product-details.container h1 {
+    font-size: 2rem;
+  }
+
+  .product-details.container h5 {
+    font-size: 1.5rem;
+  }
+
+  .product-rating.container span,
+  .product-rating.container h5 {
+    font-size: 1.2rem;
+  }
+
+  .product-description.container h6 {
+    font-size: 0.8rem;
+  }
+
+  .product-buttons.container>div {
+    max-width: 130px;
+  }
+
+  .product-buttons.container input[type="text"] {
+    padding: 0;
+  }
+
+  .product-buttons.container button[type="button"] {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
 }
+
+
 
 @media (max-width:600px) {
   .new-arrival-container h1 {
@@ -120,6 +171,15 @@ a:visited {
 
   .footer-container.MuiBox-root {
     grid-template-columns: 1fr 1fr;
+
+  }
+
+  .footer-container>.MuiBox-root {
+    gap: 20px;
+  }
+
+  .footer-container.MuiBox-root h1 {
+    font-size: 1rem;
   }
 
   .footer-hide.MuiBox-root {
@@ -130,11 +190,34 @@ a:visited {
   .benefit-container.MuiBox-root.hide-benefit {
     display: none;
   }
-}
 
-
-@media (max-width:600px) {
   .benefit-container.MuiBox-root.hide-benefit+div {
     display: none;
+  }
+
+  /* Product details */
+  .product-details.container h1 {
+    font-size: 1.4rem;
+  }
+
+  .product-details.container h5 {
+    font-size: 1rem;
+  }
+
+  .product-rating.container span,
+  .product-rating.container h5 {
+    font-size: 1rem;
+  }
+
+
+
+  .product-buttons.container>div {
+    font-size: 0.7rem;
+    max-width: 100px;
+  }
+
+  .product-buttons.container button[type="button"] {
+    font-size: 0.7rem;
+    padding: 5px 8px;
   }
 }

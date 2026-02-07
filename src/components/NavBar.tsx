@@ -18,13 +18,19 @@ const Menu = () => {
       direction="row"
       flexWrap={"wrap"}>
       <Link to="/">
-        <Button variant="text">Home</Button>
+        <Button sx={{ padding: "0" }} variant="text">
+          Home
+        </Button>
       </Link>
       <Link to="shop">
-        <Button variant="text">Shop</Button>
+        <Button sx={{ padding: "0" }} variant="text">
+          Shop
+        </Button>
       </Link>
       <Link to="contact">
-        <Button variant="text">Contact</Button>
+        <Button sx={{ padding: "0" }} variant="text">
+          Contact
+        </Button>
       </Link>
     </Stack>
   );
@@ -48,8 +54,6 @@ const IconMenu = () => {
 };
 export const Nav = () => {
   const style = {
-    maxWidth: "1200px",
-    margin: "0 auto",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -57,9 +61,19 @@ export const Nav = () => {
   };
   return (
     <ThemeProvider theme={themeNav}>
-      <Box sx={{ backgroundColor: "#fdf3e6d6" }}>
+      <Box
+        sx={{
+          backgroundColor: "#fdf3e6d6",
+          maxWidth: "1200px",
+          margin: "0 auto",
+        }}>
         <Box sx={style}>
-          <Button variant="text">LOGO</Button>
+          <Button
+            // minWidth to align nav with the rest of content mui el has it in it
+            sx={{ padding: "0", minWidth: "auto", margin: "0px" }}
+            variant="text">
+            LOGO
+          </Button>
           <Menu />
           <IconMenu />
         </Box>
