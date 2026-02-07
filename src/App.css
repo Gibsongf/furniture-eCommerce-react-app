@@ -148,7 +148,8 @@ a:visited {
   }
 
   .product.buttons>div {
-    max-width: 130px;
+    width: fit-content;
+
   }
 
   .product.buttons input[type="text"] {
