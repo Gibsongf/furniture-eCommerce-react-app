@@ -40,6 +40,11 @@ a:visited {
   background-color: #B88E2F;
 }
 
+.link-checkout.button {
+  place-self: center;
+}
+
+/* Cart */
 @media (max-width:900px) {
 
   /* Home */
@@ -106,6 +111,10 @@ a:visited {
   }
 
   /* Shop */
+  .product-grid.container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
   .benefit-container.MuiBox-root {
     flex-direction: column;
   }
@@ -169,6 +178,16 @@ a:visited {
     word-break: break-all;
     box-sizing: border-box;
   }
+
+  /* Cart  */
+  /* checkout */
+  .checkout.container {
+    padding: 10px;
+  }
+
+
+
+
 }
 
 
@@ -206,15 +225,27 @@ a:visited {
   }
 
   /* Shop */
-  .benefit-container.MuiBox-root.hide-benefit {
-    display: none;
+
+
+  .benefit-container.MuiBox-root svg {
+    /* display: none; */
+    font-size: 2rem;
   }
 
-  .benefit-container.MuiBox-root.hide-benefit+div {
+  /* .benefit-container.MuiBox-root.hide-benefit+div {
     display: none;
-  }
+  } */
 
   /* Product details */
+  .product.content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product.content nav {
+    padding: 0px;
+  }
+
   .product.name {
     font-size: 1.4rem;
   }
@@ -238,5 +269,36 @@ a:visited {
   .product.review.side-title {
     font-size: 0.9rem;
     gap: 15px;
+  }
+
+  /* Cart  */
+  /* checkout */
+  .checkout.container {
+    padding: 5px;
+  }
+
+  .link-checkout.button button {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+
+  .checkout.title {
+    font-size: 1rem;
+  }
+
+  .checkout.subtotal-title {
+    font-size: 0.8rem;
+  }
+
+  .checkout.subtotal-value {
+    font-size: 0.9rem;
+
+  }
+
+
+
+  .checkout.total-value {
+    font-size: 1.2rem;
+
   }
 }

@@ -20,6 +20,7 @@ export default function GridProducts({
   });
   return (
     <Box
+      className="product-grid container"
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr));",

@@ -94,6 +94,7 @@ export function ProductDetails() {
         maxWidth="1200px"
         margin="0 auto">
         <Box
+          className="product content"
           display="grid"
           gridTemplateColumns={"1fr 1fr"}
           justifyContent="space-between"

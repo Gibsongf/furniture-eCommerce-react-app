@@ -57,7 +57,7 @@ export const Nav = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "0 20px",
+    padding: "10px 20px",
   };
   return (
     <ThemeProvider theme={themeNav}>
