@@ -31,9 +31,10 @@ export const CartProduct = ({ product }: { product: Product }) => {
     const style: object = {
       gridColumn: col,
       alignContent: "center",
-      padding: "0.8vw 1.7vw",
-      textAlign: align[index],
+      //   padding: "0.8vw 1.7vw",
+      //   textAlign: align[index],
       justifyContent: "center",
+      width: "10ch",
     };
     return style;
   };
@@ -49,25 +50,26 @@ export const CartProduct = ({ product }: { product: Product }) => {
 
   return (
     <Box
+      className="checkout cart-product"
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(6, minmax(50px, 1fr))",
         marginBottom: "40px",
         alignItems: "center",
       }}>
-      <img
-        style={{
-          width: "100%",
-          maxWidth: "130px",
-          height: "100%",
-          maxHeight: "130px",
-          gridColumn: "1",
-          borderRadius: "15px",
-        }}
-        src={src[0]}
-        alt="title"
-        srcSet=""
-      />
+      <Box sx={{ padding: "10px" }}>
+        <img
+          style={{
+            maxWidth: "100%",
+            //   maxWidth: "130px",
+            gridColumn: "1",
+            borderRadius: "15px",
+          }}
+          src={src[0]}
+          alt="title"
+          srcSet=""
+        />
+      </Box>
       <Typography
         variant="subtitle1"
         component="h1"
@@ -87,7 +89,7 @@ export const CartProduct = ({ product }: { product: Product }) => {
         style={{
           gridColumn: "4",
           alignContent: "center",
-          padding: "0.8vw 0.5vw",
+          //   padding: "0.8vw 0.5vw",
           textAlign: "center",
           alignSelf: "center",
           justifySelf: "center",
