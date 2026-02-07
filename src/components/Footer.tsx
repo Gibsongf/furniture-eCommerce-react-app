@@ -20,7 +20,7 @@ export const Footer = () => {
           margin: "0 auto",
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1fr",
-          padding: "40px 75px 40px 75px",
+          padding: "40px 20px 40px 20px",
           justifyItems: "center",
           textAlign: "left",
           gap: "5px",
@@ -71,8 +71,6 @@ export const Footer = () => {
             </Typography>
           ))}
         </Box>
-        {/* removed col4 in 800px */}
-        {/* <Box className="col4">Newsletter</Box> */}
       </Box>
     </>
   );

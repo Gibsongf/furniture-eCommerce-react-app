@@ -56,10 +56,10 @@ export default function QuantityInput({
       sx={{
         border: "black 1px solid",
         borderRadius: "20px",
-        padding: "2px",
+        padding: "4px",
       }}>
       <NumberInput
-        style={{ maxHeight: "35px" }}
+        style={{ width: "max-content" }}
         onChange={onChange}
         aria-label="Quantity Input"
         min={1}

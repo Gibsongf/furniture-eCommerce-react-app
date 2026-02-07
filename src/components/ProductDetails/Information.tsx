@@ -21,7 +21,7 @@ const DetailsAction = () => {
   };
   return (
     <Box
-      className="product-buttons container"
+      className="product buttons container"
       display="flex"
       flexDirection="row"
       alignItems="center"
@@ -47,26 +47,38 @@ const Information = () => {
       flexDirection={"column"}
       textAlign="left"
       justifyContent="space-evenly">
-      <Typography variant="h2" component="h1">
+      <Typography className="product name" variant="h2" component="h1">
         {selectProduct.name}
       </Typography>
-      <Typography color={"#9F9F9F"} variant="h4" component="h5">
+      <Typography
+        className="product price"
+        color={"#9F9F9F"}
+        variant="h4"
+        component="h5">
         {formattedValuesToUsd(selectProduct.price)}
       </Typography>
-      <Box
-        className="product-rating container"
-        display="flex"
-        alignItems="center"
-        flexDirection="row"
-        gap="10px">
-        <Rating name="half-rating" defaultValue={3} precision={1} readOnly />
+      <Box display="flex" alignItems="center" flexDirection="row" gap="10px">
+        <Rating
+          className="product rating"
+          name="half-rating"
+          defaultValue={3}
+          precision={1}
+          readOnly
+        />
         <Divider orientation="vertical" flexItem />
-        <Typography color={"#9F9F9F"} variant="subtitle1" component="h5">
+        <Typography
+          className="product rating"
+          color={"#9F9F9F"}
+          variant="subtitle1"
+          component="h5">
           rate info
         </Typography>
       </Box>
-      <Box className="product-description container" maxWidth="40ch">
-        <Typography variant="subtitle1" component="h6">
+      <Box maxWidth="40ch">
+        <Typography
+          className="product description"
+          variant="subtitle1"
+          component="h6">
           {selectProduct.description}
         </Typography>
       </Box>

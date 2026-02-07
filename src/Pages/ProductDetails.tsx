@@ -108,7 +108,11 @@ export function ProductDetails() {
         <BasicTabs />
         <Divider orientation="horizontal" flexItem />
 
-        <Typography fontWeight={"bold"} variant="h4" component="h1">
+        <Typography
+          padding={"0 20px"}
+          fontWeight={"bold"}
+          variant="h4"
+          component="h1">
           More Products
         </Typography>
         <GridProducts products={product[0]} itemsPerPage="4" />

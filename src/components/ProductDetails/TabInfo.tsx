@@ -22,41 +22,41 @@ import { DescriptionDetails, ListReview } from "./ExtraInfo";
 // }
 
 export default function BasicTabs() {
-    const [value, setValue] = React.useState(0);
-    const ItemsTab = () => {
-        return (
-            <>
-                {value === 0 ? <DescriptionDetails /> : ""}
-                {value === 1 ? <ListReview /> : ""}
-            </>
-        );
-    };
-    const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
-
+  const [value, setValue] = React.useState(0);
+  const ItemsTab = () => {
     return (
-        <Box>
-            <Box>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="extra-info"
-                    textColor="inherit"
-                    sx={{
-                        "& .Mui-selected": {
-                            fontWeight: "bold",
-                        },
-                        marginBottom: "15px",
-                    }}
-                    centered>
-                    <Tab label="Description" value={0} />
-                    <Tab label="Review[num reviews]" value={1} />
-                </Tabs>
-            </Box>
-            <Box display="flex" justifyContent={"center"}>
-                <ItemsTab />
-            </Box>
-        </Box>
+      <>
+        {value === 0 ? <DescriptionDetails /> : ""}
+        {value === 1 ? <ListReview /> : ""}
+      </>
     );
+  };
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box maxWidth="1200px" margin="0 auto">
+      <Box>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="extra-info"
+          textColor="inherit"
+          sx={{
+            "& .Mui-selected": {
+              fontWeight: "bold",
+            },
+            marginBottom: "15px",
+          }}
+          centered>
+          <Tab label="Description" value={0} />
+          <Tab label="Review[num reviews]" value={1} />
+        </Tabs>
+      </Box>
+      <Box display="flex" justifyContent={"center"}>
+        <ItemsTab />
+      </Box>
+    </Box>
+  );
 }
