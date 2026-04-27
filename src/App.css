@@ -11,6 +11,10 @@
   background-repeat: no-repeat;
 }
 
+.home.browse-range {
+  text-align: center;
+}
+
 .header-shop.MuiBox-root {
   background-image: linear-gradient(#ffffff6c, #ffffff5e), url("/Shop/shop-header.jpg");
   background-size: cover;
@@ -198,8 +202,12 @@ a:visited {
 }
 
 
-
 @media (max-width:600px) {
+  .nav-container.MuiBox-root {
+    padding: 5px;
+  }
+
+
   .new-arrival-container h1 {
     font-size: 1rem;
   }
@@ -212,6 +220,31 @@ a:visited {
 
   .new-arrival-container .new-arrival-description {
     display: none;
+  }
+
+
+
+  .product-card h1 {
+    font-size: 1.1rem;
+  }
+
+  .product-card h2 {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .share-setup.title {
+    font-size: 1.1rem;
+  }
+
+  .share-setup.hashtag {
+    font-size: 1.2rem;
+  }
+
+  .MuiImageList-root.MuiImageList-masonry {
+    column-count: 4 !important;
+    column-gap: 10px !important;
+
   }
 
   .footer-container.MuiBox-root {
@@ -316,4 +349,14 @@ a:visited {
     font-size: 1.2rem;
 
   }
+}
+
+@media (max-width:500px) {
+
+  /* Shop */
+  .product-grid.container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+  }
+
 }

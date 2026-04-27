@@ -67,7 +67,7 @@ export const Nav = () => {
           maxWidth: "1200px",
           margin: "0 auto",
         }}>
-        <Box sx={style}>
+        <Box className="nav-container" sx={style}>
           <Button
             // minWidth to align nav with the rest of content mui el has it in it
             sx={{ padding: "0", minWidth: "auto", margin: "0px" }}

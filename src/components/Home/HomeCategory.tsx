@@ -23,6 +23,7 @@ export const Categories = () => {
         maxWidth: "1200px",
         padding: "20px",
         margin: "0 auto",
+        textAlign: "center",
       }}
       className="home-category container"
       gap={60}

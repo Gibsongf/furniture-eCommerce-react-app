@@ -9,8 +9,6 @@ export default function ShareSetupImages() {
   return (
     <Box
       sx={{
-        // width: "99vw",
-        // overflowY: "hidden",
         borderBottom: "solid 1px #616161",
         paddingBottom: "20px",
       }}>

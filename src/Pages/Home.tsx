@@ -20,10 +20,18 @@ const BrowseRange = () => {
 const ShareSetup = () => {
   return (
     <Box>
-      <Typography color="#616161" variant="h6" component="h1">
+      <Typography
+        className="share-setup title"
+        color="#616161"
+        variant="h6"
+        component="h1">
         Share your setup with
       </Typography>
-      <Typography fontWeight={"bold"} variant="h3" component="h1">
+      <Typography
+        className="share-setup hashtag"
+        fontWeight={"bold"}
+        variant="h3"
+        component="h1">
         #DictumFelis
       </Typography>
     </Box>
